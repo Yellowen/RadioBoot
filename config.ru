@@ -3,6 +3,6 @@ require 'bundler'
 
 Bundler.require
 
-require './app.rb'
+require './app/application'
 
-run Sinatra::Application
+run RadioApp
