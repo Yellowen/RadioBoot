@@ -6,22 +6,16 @@
    @include row();
 }
 
-.shift4 {
-   @include shift(4);
+@for $i from 1 through 12 {
+    .shift#{$i} {
+        @include shift($i);
+    }
+   .column#{$i} {
+      @include span-columns($i);
+   }
+
 }
 
-.shift2 {
-   @include shift(2);
-}
-.shift {
-   @include shift(1);
-}
-.column4 {
-   @include span-columns(4);
-}
-.column5 {
-   @include span-columns(5);
-}
 
 div.container {
    @include outer-container;
