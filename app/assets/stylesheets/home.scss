@@ -1,0 +1,311 @@
+@import "variables";
+@import "lib/bourbon/bourbon";
+@import "lib/bitters/bitters";
+@import "lib/neat/neat";
+
+@import "grid";
+@import "modal";
+
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+@mixin opensans {
+   font-family: 'Roboto', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5 {
+   @include opensans;
+   font-weight: 700;
+}
+p, span {
+   @include opensans;
+}
+
+.center {
+   text-align: center;
+}
+
+html, body {
+   width: 100%;
+   height: 100%;
+   background: $almost_white;
+}
+
+.main {
+   background: url(asset_path('pat.png'));
+
+}
+.section {
+   border-bottom: 1px solid $gray;
+}
+
+.logo {
+   width: 70px;
+   height: 70px;
+   display: inline;
+   position: relative;
+   z-index: 10;
+   top: 5px;
+   left: 100px;
+}
+
+.content {
+   @include span-columns(8);
+   @include shift(2);
+   text-align: center;
+   &.first_page {
+      .title {
+         @include calc(font-size, '80px');
+         padding-left: 72px;
+         background: url(asset_path('ruby.svg')) 0px 20px no-repeat;
+         color: $gray;
+         span {
+            color: $dark_red;
+         }
+      }
+      span.slug {
+         color: $dark_red;
+         @include opensans;
+
+      }
+   }
+}
+
+.info {
+   h3 {
+      text-align: center;
+   }
+
+   p {
+      text-align: justify;
+   }
+}
+
+
+#section1 {
+   .bglogo {
+      width: 70%;
+      height: 70%;
+      position: absolute;
+      opacity: 0.1;
+      z-index: 3;
+      bottom: -30px;
+      right: -40px;
+   }
+}
+
+footer, #section2 {
+   //background: $footer_bg;
+   @include background-image(radial-gradient($blue, $dark_blue));
+   border-top: 5px solid $dark_gray !important;
+   color: white;
+}
+
+
+
+.btn {
+   cursor: pointer;
+   @include pad(0.5em 1em);
+   text-shadow: 0 1px 3px $gray;
+   border-radius: 4px !important;
+   font-weight: 700;
+   @include opensans;
+   font-size: 1em;
+   a {
+      color: white;
+   }
+   &.red {
+      background: $red;
+      border: 1px solid darken($red, 5%);
+      border-bottom: 5px solid $dark_red !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($red, 3%);
+      }
+   }
+
+   &.blue {
+      background: $blue;
+      border: 1px solid darken($blue, 5%);
+      border-bottom: 5px solid $dark_blue !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($blue, 3%);
+      }
+   }
+
+   &.black {
+      background: $dark_gray;
+      border: 1px solid darken($dark_gray, 5%);
+      border-bottom: 5px solid $darker_gray !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($dark_gray, 3%);
+      }
+   }
+
+   &.green {
+      background: $green;
+      border: 1px solid darken($green, 5%);
+      border-bottom: 5px solid darken($green, 30%) !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($green, 3%);
+      }
+   }
+   &.gray {
+      background: $lighter_gray;
+      a {color: $darker_gray !important;}
+      text-shadow: none !important;
+      border: 1px solid darken($lighter_gray, 5%);
+      border-bottom: 5px solid lighten($gray, 10%) !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($lighter_gray, 3%);
+      }
+   }
+   &.twitter {
+      background: $twitter;
+      border: 1px solid darken($twitter, 5%);
+      border-bottom: 5px solid darken($twitter, 30%) !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($twitter, 3%);
+      }
+   }
+   &.facebook {
+      background: $facebook;
+      border: 1px solid darken($red, 5%);
+      border-bottom: 5px solid darken($facebook, 30%) !important;
+      color: white;
+      &:hover {
+         color: white;
+         background: darken($facebook, 3%);
+      }
+   }
+
+
+   i:after {
+      padding-left: 0.4em;
+   }
+
+}
+
+.post {
+   height: 26em;
+   background: white;
+   border: 1px solid $lighter_gray;
+   border-radius: 4px;
+   text-align: left;
+   @include pad(1em default default default);
+   color: $gray;
+   position: relative;
+}
+
+.scroll {
+   position: absolute;
+   top: 90%;
+   width: 100%;
+   text-align: center;
+}
+
+.bblue {
+   border-bottom: 10px solid $blue !important;
+}
+
+.bgreen {
+   border-bottom: 10px solid $green !important;
+}
+.bred {
+   border-bottom: 10px solid $red  !important;
+}
+
+.redcolor {
+   color: $red;
+}
+
+.para {
+   @include pad(1em 0 0 0);
+}
+
+.sponsorboxes {
+   margin-top: 3em;
+
+   .box {
+      position: relative;
+      background: white;
+      border: 1px solid $lighter_gray;
+      border-radius: 4px;
+      text-align: center;
+      @include pad(3em default 3em default);
+      height: 12em;
+      color: $gray;
+      @include transition (background-image 300ms ease-in 0s);
+
+      &:hover {
+         background-image: $very_light_gray;
+         @include transition (background-image 300ms ease-in 0s);
+      }
+
+      .hint {
+         position: absolute;
+         @include calc(bottom, '10px');
+         color: $gray;
+         font-size: 0.8em;
+         @include calc(left, '0px');
+         width: 100%;
+         text-shadow: none;
+      }
+   }
+   .yellowenbg {
+      background: url(asset_path("yellowen_logo.png")) center center no-repeat white;
+   }
+   .rubycentralbg {
+      background: url(asset_path('rubycentral.png')) center center no-repeat white;
+   }
+
+}
+
+.copyright {
+   position: absolute;
+   bottom: 10px;
+   width: 100%;
+   text-align: center;
+   font-size: 0.8em;
+   @include opensans;
+}
+
+.buttons {
+   position: absolute;
+   @include calc(bottom, '10px');
+   @include calc(right, '10px');
+
+}
+
+.social1 {
+   position: absolute;
+   @include calc(bottom, '30px');
+}
+
+.footer {
+   text-shadow: 0 1px 3px $gray;
+}
+.email {
+   font-weight: 700;
+   color: $blue !important;
+}
+
+.mailinglist {
+   font-weight: 700;
+   color: $red !important;
+}

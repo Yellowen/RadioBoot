@@ -1,0 +1,33 @@
+@import "variables";
+@import "lib/bourbon/bourbon";
+@import "lib/neat/neat";
+
+.row {
+   @include row();
+}
+
+.shift4 {
+   @include shift(4);
+}
+
+.shift2 {
+   @include shift(2);
+}
+.shift {
+   @include shift(1);
+}
+.column4 {
+   @include span-columns(4);
+}
+.column5 {
+   @include span-columns(5);
+}
+
+div.container {
+   @include outer-container;
+   section {
+      @include span-columns(12);
+      @include pad(7em 2em 5em 2em);
+
+   }
+}

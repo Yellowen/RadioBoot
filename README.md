@@ -27,7 +27,7 @@ Before running any of these examples, you should run the below command to make s
 
 To run this application locally, cd into the sinatra-example directory that you cloned and run
 
-		bundle exec ruby -S rackup -w config.ru
+		bundle exec rerun 'rackup -p 3000'
 
 It's simply a **Sinatra** app nothing special
 
