@@ -34,24 +34,26 @@ html, body {
    height: 100%;
    color: white;
    background: $black;
+   direction: rtl;
 }
 
 .main {
    background: url(asset_path('pat.png'));
 
 }
-.section {
+section {
    border-bottom: 1px solid $gray;
+   &.head {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      height: 50em;
+      top: 0;
+      @include radial-gradient($red, $dark_red);
+   }
 }
 
 .logo {
-   width: 70px;
-   height: 70px;
-   display: inline;
-   position: relative;
-   z-index: 10;
-   top: 5px;
-   left: 100px;
 }
 
 .content {
@@ -309,4 +311,8 @@ footer, #section2 {
 .mailinglist {
    font-weight: 700;
    color: $red !important;
+}
+
+.menu {
+
 }
