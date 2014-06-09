@@ -5,6 +5,7 @@
 
 @import "grid";
 @import "modal";
+@import "menu";
 
 @import url("http://fonts.googleapis.com/css?family=Roboto");
 
@@ -33,7 +34,6 @@ html, body {
    width: 100%;
    height: 100%;
    color: white;
-   background: $black;
    direction: rtl;
 }
 
@@ -49,66 +49,16 @@ section {
       min-height: 100%;
       height: 50em;
       top: 0;
-      @include radial-gradient($red, $dark_red);
+      //@include radial-gradient($red, $dark_red);
+      background: $dark_red;
+      header {
+         padding-top: 30px;
+      }
    }
 }
 
 .logo {
 }
-
-.content {
-   @include span-columns(8);
-   @include shift(2);
-   text-align: center;
-   &.first_page {
-      .title {
-         @include calc(font-size, '80px');
-         padding-left: 72px;
-         background: url(asset_path('ruby.svg')) 0px 20px no-repeat;
-         color: $gray;
-         span {
-            color: $dark_red;
-         }
-      }
-      span.slug {
-         color: $dark_red;
-         @include opensans;
-
-      }
-   }
-}
-
-.info {
-   h3 {
-      text-align: center;
-   }
-
-   p {
-      text-align: justify;
-   }
-}
-
-
-#section1 {
-   .bglogo {
-      width: 70%;
-      height: 70%;
-      position: absolute;
-      opacity: 0.1;
-      z-index: 3;
-      bottom: -30px;
-      right: -40px;
-   }
-}
-
-footer, #section2 {
-   //background: $footer_bg;
-   @include background-image(radial-gradient($blue, $dark_blue));
-   border-top: 5px solid $dark_gray !important;
-   color: white;
-}
-
-
 
 .btn {
    cursor: pointer;
@@ -295,22 +245,9 @@ footer, #section2 {
 
 }
 
-.social1 {
-   position: absolute;
-   @include calc(bottom, '30px');
-}
 
 .footer {
    text-shadow: 0 1px 3px $gray;
-}
-.email {
-   font-weight: 700;
-   color: $blue !important;
-}
-
-.mailinglist {
-   font-weight: 700;
-   color: $red !important;
 }
 
 .menu {

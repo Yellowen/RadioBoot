@@ -17,6 +17,16 @@
   <body>
     <%= yield %>
 
+    <nav class="js-menu sliding-menu-content">
+      <ul>
+        <li><a href="javascript:void(0)"><%= t(:home) %></a></li>
+        <li><a href="javascript:void(0)"><%= t(:archive) %></a></li>
+        <li><a href="javascript:void(0)"><%= t(:faq) %></a></li>
+      </ul>
+    </nav>
+
+    <div class="js-menu-screen menu-screen"></div>
+
     <!-- Start of StatCounter Code for Default Guide -->
     <script type="text/javascript">
      var sc_project=9849607;
