@@ -63,6 +63,32 @@ section {
          }
       }
    }
+   &.footer {
+      text-shadow: 0 1px 3px $gray;
+      height: 50em;
+      width: 100%;
+      background: $red;
+   }
+
+   &.info {
+      padding: 3em 0;
+      text-shadow: 0 1px 3px $gray;
+
+      width: 100%;
+      background: $blue;
+      .row {
+         margin: 5em 0;
+      }
+   }
+
+   &.details {
+      border-radius: 3px;
+      boarder: 1px solid $lighter_gray;
+      background: white;
+      margin-top: 3em;
+      padding: 2em;
+   }
+
 }
 
 .logo {
@@ -254,18 +280,16 @@ section {
 }
 
 
-.footer {
-   text-shadow: 0 1px 3px $gray;
-}
 
 .menu {
 
 }
 
-.details {
-   border-radius: 3px;
-   boarder: 1px solid $lighter_gray;
-   background: white;
-   margin-top: 3em;
-   padding: 2em;
+
+.float-left {
+   float: left;
+}
+
+.float-right {
+   float: right;
 }
