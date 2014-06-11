@@ -6,6 +6,7 @@ require 'i18n/backend/fallbacks'
 # Main Sinatra application class
 class RadioApp < Sinatra::Application
   set :root, File.dirname(__FILE__)
+  set :locales, ["en", "fa"]
 
   enable :sessions
   enable :logging
@@ -34,13 +35,21 @@ class RadioApp < Sinatra::Application
 
   end
 
-  before '/[en|fa]:locale/*' do
-    I18n.locale       =       params[:locale]
-    request.path_info = '/' + params[:splat][0]
+  before '/:locale/*' do
+    I18n.locale = params[:locale]
+
+    if settings.locales.include? params[:locale]
+      @locale = params[:locale]
+      request.path_info = '/' + params[:splat][0]
+    else
+      @locale = 'fa'
+      request.path_info = "/#{params[:locale]}/#{params[:splat][0]}"
+    end
   end
 
   get '/' do
     # use the views/index.erb file
+    @locale ||= "fa"
     erb :'index.html'
   end
 end

@@ -36,7 +36,7 @@ html, body {
    width: 100%;
    height: 100%;
    color: $darker_gray;
-   direction: rtl;
+
 }
 
 .main {
@@ -58,7 +58,18 @@ section {
       //background: $almost_white;
       background: url('<%= image_path("radio_bg.png") %>') center center no-repeat;
       header {
-         padding-top: 30px;
+         //padding-top: 30px;
+         width: 100%;
+         background: $red;
+         .menu {
+            ul {
+               list-style: none;
+               li {
+                  padding: 0.5em 1em;
+                  display: inline;
+               }
+            }
+         }
       }
       .player {
          margin-top: 10em;
@@ -287,16 +298,10 @@ section {
 }
 
 
-
-.menu {
-
-}
-
-
 .float-left {
-   float: left;
+   float: <%= @locale == 'fa' ? "left" : "right" %>;
 }
 
 .float-right {
-   float: right;
+   float: <%= @locale == 'fa' ? "right" : "left" %>;
 }

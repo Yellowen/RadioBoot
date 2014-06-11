@@ -1,33 +1,40 @@
 <section class="head">
-  <div class="container">
-    <header>
+  <header>
+    <div class="container">
+
       <div class="row">
-        <div class="column1 menu">
-          <a href="#" class="js-menu-trigger sliding-menu-button"><i class="fa fa-bars fa-lg"></i></a>
+        <div class="column6">
+          <nav class="menu">
+            <ul>
+              <li><a href="#"><i class="fa fa-user"></i> <%= t(:home) %></a></li>
+              <li><a class="js-menu-trigger" href="#"><i class="fa fa-user"></i> <%= t(:archive) %></a></li>
+              <li><a href="#"><i class="fa fa-user"></i> <%= t(:faq) %></a></li>
+            </ul>
+          </nav>
         </div>
 
-        <div class="column4 shift3 title center">
+        <div class="column6  title">
           <h1 class="logo">RadioBoot</h1>
         </div>
       </div>
-    </header>
+  </header>
 
-    <div class="row">
-      <div class="player column8 shift2">
-        <h2>podcast title</h2>
-        <br />
+      <div class="row">
+        <div class="player column8 shift2">
+          <h2>podcast title</h2>
+          <br />
 
-        <div class="row">
-          <div class="column10 shift1">
-            asdfsdfsdf
-            <div class="row">
-              <a href="#" class="btn blue float-left"><%= t(:listen_or_download) %></a>
+          <div class="row">
+            <div class="column10 shift1">
+              asdfsdfsdf
+              <div class="row">
+                <a href="#" class="btn blue float-left"><%= t(:listen_or_download) %></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-  </div>
+    <div class="footer">
+    </div>
 </section>
