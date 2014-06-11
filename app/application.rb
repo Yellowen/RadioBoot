@@ -33,6 +33,13 @@ class RadioApp < Sinatra::Application
       I18n.t(*args)
     end
 
+    def link_to(url, title, icon)
+      if @locale == "en"
+        "<a href='#{url}'><i class='#{icon}'></i> #{title}</a>"
+      else
+        "<a href='#{url}'>#{title} <i class='#{icon}'></i></a>"
+      end
+    end
   end
 
   before '/:locale/*' do

@@ -59,14 +59,23 @@ section {
       background: url('<%= image_path("radio_bg.png") %>') center center no-repeat;
       header {
          //padding-top: 30px;
+         height: 3.5em;
          width: 100%;
-         background: $red;
+         background: $black;
+         h1 {
+            padding-top: 0.25em;
+            color: white;
+         }
          .menu {
             ul {
+               padding-top: 1em;
                list-style: none;
                li {
                   padding: 0.5em 1em;
                   display: inline;
+                  a {
+                     color: white;
+                  }
                }
             }
          }
@@ -78,7 +87,9 @@ section {
          }
       }
       .footer {
-         text-shadow: 0 1px 3px $gray;
+         color: $gray;
+         font-size: 0.8em;
+         padding-top: 0.5em;
          height: 3em;
          width: 100%;
          background: $black;
@@ -295,4 +306,26 @@ section {
    @include calc(bottom, '10px');
    @include calc(right, '10px');
 
+}
+
+.mainsection {
+   margin-top: 5em;
+}
+
+
+.box {
+   position: relative;
+   background: white;
+   border: 1px solid $lighter_gray;
+   border-radius: 4px;
+   text-align: center;
+   @include pad(3em default 3em default);
+   height: 12em;
+   color: $gray;
+   @include transition (background-image 300ms ease-in 0s);
+
+   &:hover {
+      background-image: $very_light_gray;
+      @include transition (background-image 300ms ease-in 0s);
+   }
 }

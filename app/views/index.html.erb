@@ -4,7 +4,7 @@
 
       <div class="row">
         <div class="column6">
-          <nav class="menu">
+          <nav class="menu center">
             <ul>
               <li><a href="#"><i class="fa fa-user"></i> <%= t(:home) %></a></li>
               <li><a class="js-menu-trigger" href="#"><i class="fa fa-user"></i> <%= t(:archive) %></a></li>
@@ -17,24 +17,28 @@
           <h1 class="logo">RadioBoot</h1>
         </div>
       </div>
+    </div>
   </header>
 
-      <div class="row">
-        <div class="player column8 shift2">
-          <h2>podcast title</h2>
-          <br />
+  <div class="mainsection container">
 
-          <div class="row">
-            <div class="column10 shift1">
-              asdfsdfsdf
-              <div class="row">
-                <a href="#" class="btn blue float-left"><%= t(:listen_or_download) %></a>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="row">
+      <div class="column5 shift1 box">
+        <h2 class="center">podcast title</h2>
+        <br />
+      </div>
+      <div class="column5 box">
+        asdfsdfsdf
       </div>
     </div>
-    <div class="footer">
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="column6 text-left"></div>
+        <div class="column6 text-right"><%= t(:copyright) %></div>
+      </div>
     </div>
+  </div>
+
 </section>
