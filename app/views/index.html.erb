@@ -22,72 +22,95 @@
   <div class="mainsection container">
 
     <div class="row">
-      <div class="column5 shift1 box">
-
-          <h2 class="center">#0</h2>
-          <h3>some shit about latest episode</h3>
-          <br />
-          <div class="row">
-            <a href="/last/" class="btn green"><%= t(:listen_or_download) %></a>
+      <div class="column5 shift1">
+        <div class="row">
+          <div class="column12 box">
+            <h2 class="center">#0</h2>
+            <h3>some shit about latest episode</h3>
+            <br />
+            <br />
+            <div class="row">
+              <a href="/last/" class="btn green"><%= t(:listen_or_download) %></a>
+            </div>
+            <br />
           </div>
-          <br />
+        </div>
+        <br />
+        <div class="row">
+          <div class="column12 box text-right">
+            <p><%= t(:desc) %></p>
+            <br />
+            <div class="row center">
+              <input class="input" type="text" name="email" id="email" placeholder="<%= t(:email) %> . . ." value=""/>
+              <a class="submit btn blue" href="#"><%= t(:submit) %></a>
+            </div>
+          </div>
+        </div>
 
       </div>
-      <div class="column5 box">
-          <h3><%= t(:radioboot) %></h3>
-          <p><%= t(:desc) %></p>
 
-          <div class="row">
-            <input class="input" type="text" name="email" id="email" placeholder="<%= t(:email) %> . . ." value=""/>
-            <a class="submit btn blue" href="#"><%= t(:submit) %></a>
+      <div class="column5">
+
+        <div class="row">
+          <div class="column12 box text-right">
+
+            <p><%= t(:desc) %></p>
+            <br />
+            <div class="row center">
+              <input class="input" type="text" name="email" id="email" placeholder="<%= t(:email) %> . . ." value=""/>
+              <a class="submit btn blue" href="#"><%= t(:submit) %></a>
+            </div>
           </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="column12 box">
+
+            <h3><%= t(:special_thanks) %></h3>
+            <br />
+            <div class="row">
+              <div class="sponsorlogo">
+
+                <div class="column4 shift2">
+                  <a href="//yellowen.com"><img src="<%= image_path 'yellowen_logo.png' %>" class="yellowen"  alt="Yellowen"></a>
+                </div>
+                <div class="column4">
+                  <a href="//karajlug.org"><img src="<%= image_path 'karajlug_logo.png' %>" class="karajlug"  alt="Karajlug"></a>
+                </div>
+              </div>
+
+            </div>
+            <br />
+            <div class="row">
+              <span>
+                <%= t(:become_sponsor) %>
+              </span>
+            </div>
+
+          </div>
+        </div>
 
       </div>
     </div>
-    <br />
-    <div class="row">
-      <div class="shift1 column10 box">
-
-          <h3><%= t(:special_thanks) %></h3>
-          <br />
-          <div class="row">
-            <div class="sponsorlogo">
-
-            <div class="column4 shift2">
-              <a href="//yellowen.com"><img src="<%= image_path 'yellowen_logo.png' %>" class="yellowen"  alt="Yellowen"></a>
+      <br />
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <% if @locale == "fa" %>
+            <div class="column6 text-left">
+              <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+              <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+              <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+              <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
             </div>
-            <div class="column4">
-              <a href="//karajlug.org"><img src="<%= image_path 'karajlug_logo.png' %>" class="karajlug"  alt="Karajlug"></a>
-            </div>
-            </div>
-
-          </div>
-          <div class="row">
-            <span>
-              <%= t(:become_sponsor) %>
-            </span>
-          </div>
-
+            <div class="column6 text-right"><%= t(:copyright) %></div>
+          <% else %>
+            <div class="column6 text-right"><%= t(:copyright) %></div>
+            <div class="column6 text-left">s</div>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <% if @locale == "fa" %>
-          <div class="column6 text-left">
-            <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-            <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
-            <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-          </div>
-          <div class="column6 text-right"><%= t(:copyright) %></div>
-        <% else %>
-          <div class="column6 text-right"><%= t(:copyright) %></div>
-          <div class="column6 text-left">s</div>
-        <% end %>
-      </div>
-    </div>
-  </div>
 
 </section>
