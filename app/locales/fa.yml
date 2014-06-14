@@ -5,7 +5,8 @@ fa:
   copyright: © کپی رایت رادیو بوت
   radioboot: رادیو بوت
   special_thanks: حامیان ما
-  become_sponsor: از ما حمایت کنید
+  become_sponsor: !!escape
+    <a href="#">از ما حمایت کنید</a>
   listen_or_download: |
    [دانلود|گوش] کن
   desc: !!escape

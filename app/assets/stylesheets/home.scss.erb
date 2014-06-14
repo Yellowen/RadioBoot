@@ -9,24 +9,13 @@
 @import "progress";
 @import "tooltip";
 
-@import url("http://fonts.googleapis.com/css?family=Roboto");
 
 * {
    padding: 0;
    margin: 0;
 }
 
-@mixin opensans {
-   font-family: 'Roboto', sans-serif !important;
-}
 
-h1, h2, h3, h4, h5 {
-   @include opensans;
-   font-weight: 700;
-}
-p, span {
-   @include opensans;
-}
 
 .center {
    text-align: center;
@@ -129,7 +118,6 @@ section {
    text-shadow: 0 1px 3px $gray;
    border-radius: 4px !important;
    font-weight: 700;
-   @include opensans;
    font-size: 1em;
    a {
       color: white;
@@ -260,7 +248,6 @@ section {
    width: 100%;
    text-align: center;
    font-size: 0.8em;
-   @include opensans;
 }
 
 .buttons {
