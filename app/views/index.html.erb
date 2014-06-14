@@ -6,9 +6,8 @@
         <div class="column6">
           <nav class="menu center">
             <ul>
-              <li><a href="#"><i class="fa fa-user"></i> <%= t(:home) %></a></li>
-              <li><a class="js-menu-trigger" href="#"><i class="fa fa-user"></i> <%= t(:archive) %></a></li>
-              <li><a href="#"><i class="fa fa-user"></i> <%= t(:faq) %></a></li>
+              <li><a class="js-menu-trigger" href="#"><i class="fa fa-bars fa-lg"></i> </a></li>
+
             </ul>
           </nav>
         </div>
@@ -24,19 +23,69 @@
 
     <div class="row">
       <div class="column5 shift1 box">
-        <h2 class="center">podcast title</h2>
-        <br />
+
+          <h2 class="center">podcast title</h2>
+          <p>some shit about latest episode</p>
+          <br />
+          <div class="row">
+            <a href="#" class="btn green"><%= t(:listen_or_download) %></a>
+          </div>
+          <br />
+
       </div>
       <div class="column5 box">
-        asdfsdfsdf
+          <h3><%= t(:radioboot) %></h3>
+          <p><%= t(:desc) %></p>
+
+          <div class="row">
+            <input class="input" type="text" name="email" id="email" placeholder="<%= t(:email) %> . . ." value=""/>
+            <a class="submit btn blue" href="#"><%= t(:submit) %></a>
+          </div>
+
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="shift1 column10 box">
+
+          <h3><%= t(:special_thanks) %></h3>
+          <br />
+          <div class="row">
+            <div class="sponsorlogo">
+
+            <div class="column4 shift2">
+              <a href="//yellowen.com"><img src="<%= image_path 'yellowen_logo.png' %>" class="yellowen"  alt="Yellowen"></a>
+            </div>
+            <div class="column4">
+              <a href="//karajlug.org"><img src="<%= image_path 'karajlug_logo.png' %>" class="karajlug"  alt="Karajlug"></a>
+            </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <span>
+              <%= t(:become_sponsor) %>
+            </span>
+          </div>
+
       </div>
     </div>
   </div>
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="column6 text-left"></div>
-        <div class="column6 text-right"><%= t(:copyright) %></div>
+        <% if @locale == "fa" %>
+          <div class="column6 text-left">
+            <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+          </div>
+          <div class="column6 text-right"><%= t(:copyright) %></div>
+        <% else %>
+          <div class="column6 text-right"><%= t(:copyright) %></div>
+          <div class="column6 text-left">s</div>
+        <% end %>
       </div>
     </div>
   </div>

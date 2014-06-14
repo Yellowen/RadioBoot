@@ -254,44 +254,6 @@ section {
    @include pad(1em 0 0 0);
 }
 
-.sponsorboxes {
-   margin-top: 3em;
-
-   .box {
-      position: relative;
-      background: white;
-      border: 1px solid $lighter_gray;
-      border-radius: 4px;
-      text-align: center;
-      @include pad(3em default 3em default);
-      height: 12em;
-      color: $gray;
-      @include transition (background-image 300ms ease-in 0s);
-
-      &:hover {
-         background-image: $very_light_gray;
-         @include transition (background-image 300ms ease-in 0s);
-      }
-
-      .hint {
-         position: absolute;
-         @include calc(bottom, '10px');
-         color: $gray;
-         font-size: 0.8em;
-         @include calc(left, '0px');
-         width: 100%;
-         text-shadow: none;
-      }
-   }
-   .yellowenbg {
-      background: url(asset_path("yellowen_logo.png")) center center no-repeat white;
-   }
-   .rubycentralbg {
-      background: url(asset_path('rubycentral.png')) center center no-repeat white;
-   }
-
-}
-
 .copyright {
    position: absolute;
    bottom: 10px;
@@ -314,18 +276,44 @@ section {
 
 
 .box {
-   position: relative;
+   //position: relative;
+   text-align: center;
+   display: block;
+   min-height: 14em;
+   color: $darker_gray;
    background: white;
    border: 1px solid $lighter_gray;
    border-radius: 4px;
-   text-align: center;
+   //opacity: 0.5;
+
    @include pad(3em default 3em default);
-   height: 12em;
-   color: $gray;
    @include transition (background-image 300ms ease-in 0s);
 
    &:hover {
       background-image: $very_light_gray;
       @include transition (background-image 300ms ease-in 0s);
    }
+}
+
+.sponsorlogo {
+   .yellowen {
+      margin-top: 40px;
+      width: 200px;
+      height: 39px;
+
+   }
+   .karajlug {
+      width: 120px;
+      height: 120px;
+
+   }
+}
+
+.input {
+   display: inline;
+   width: 60% !important;
+   margin: 10px 0 10px 5px;
+}
+.submit {
+   width: 30%;
 }
