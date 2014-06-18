@@ -293,9 +293,6 @@ section {
       @include transition (background-image 300ms ease-in 0s);
    }
    .title {
-      &.red {
-         background: $red;
-      }
       @include pad(0.7em 0.5em);
       font-size: 1.2em;
       font-weight: 700;
@@ -305,6 +302,7 @@ section {
    }
    .body {
       @include pad(3em 1em);
+      height: 100%;
    }
 }
 
@@ -329,4 +327,19 @@ section {
 }
 .submit {
    width: 30%;
+}
+
+.red {
+   background: $red;
+   color: white;
+}
+
+.green {
+   background: $green;
+   color: white;
+}
+
+.blue {
+   background: $blue;
+   color: white;
 }
