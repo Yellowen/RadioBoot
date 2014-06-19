@@ -16,6 +16,11 @@
           <h1 class="logo">RadioBoot</h1>
         </div>
       </div>
+
+
+      <div class="row bigtitle">
+        <h1>RadioBoot</h1>
+      </div>
     </div>
   </header>
 </section>
@@ -25,28 +30,30 @@
     <div class="row">
       <div class="column5 shift1">
         <div class="row">
+
+          <a href="#">
           <div class="column12 box green">
             <div class="body">
-            <h2 class="center">#0</h2>
-            <h3>some shit about latest episode</h3>
-            <br />
-            <br />
-            <div class="row">
-              <a href="/last/" class="btn green"><%= t(:listen_or_download) %></a>
-            </div>
-            <br />
+              <h2 class="center">#0</h2>
+              <h3>some shit about latest episode</h3>
+              <br />
+              <br />
+              <br />
             </div>
           </div>
+          </a>
+
+
         </div>
         <div class="row hgutter">
           <div class="column12 box blue text-right">
             <div class="body">
-            <p><%= t(:subscribe) %></p>
-            <br />
-            <div class="row center">
-              <input class="input" type="text" name="email" id="email" placeholder="<%= t(:email) %> . . ." value=""/>
-              <a class="submit btn blue" href="#"><%= t(:submit) %></a>
-            </div>
+              <p><%= t(:subscribe) %></p>
+              <br />
+              <div class="row center">
+                <input class="input" type="text" name="email" id="email" placeholder="<%= t(:email) %> . . ." value=""/>
+                <a class="submit btn blue" href="#"><%= t(:submit) %></a>
+              </div>
             </div>
           </div>
         </div>
@@ -58,36 +65,38 @@
         <div class="row">
           <div class="column12  red box text-right">
             <div class="body">
-            <p><%= t(:desc) %></p>
-            <br />
+              <p><%= t(:desc) %></p>
+              <br />
             </div>
           </div>
         </div>
 
         <div class="row hgutter">
           <div class="column12 box">
+            <div class="title green">
+              <p><%= t(:special_thanks) %></>
+            </div>
+            <div class="body">
+              <br />
+              <div class="row">
+                <div class="sponsorlogo">
 
-            <h3><%= t(:special_thanks) %></h3>
-            <br />
-            <div class="row">
-              <div class="sponsorlogo">
+                  <div class="column4 shift2">
+                    <a href="//yellowen.com"><img src="<%= image_path 'yellowen_logo.png' %>" class="yellowen"  alt="Yellowen"></a>
+                  </div>
+                  <div class="column4">
+                    <a href="//karajlug.org"><img src="<%= image_path 'karajlug_logo.png' %>" class="karajlug"  alt="Karajlug"></a>
+                  </div>
+                </div>
 
-                <div class="column4 shift2">
-                  <a href="//yellowen.com"><img src="<%= image_path 'yellowen_logo.png' %>" class="yellowen"  alt="Yellowen"></a>
-                </div>
-                <div class="column4">
-                  <a href="//karajlug.org"><img src="<%= image_path 'karajlug_logo.png' %>" class="karajlug"  alt="Karajlug"></a>
-                </div>
               </div>
-
+              <br />
+              <div class="row">
+                <span>
+                  <a href="#" class="btn gray"><%= t(:become_sponsor) %></a>
+                </span>
+              </div>
             </div>
-            <br />
-            <div class="row">
-              <span>
-                <%= t(:become_sponsor) %>
-              </span>
-            </div>
-
           </div>
         </div>
 
