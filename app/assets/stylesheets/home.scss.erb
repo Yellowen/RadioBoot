@@ -32,6 +32,9 @@ html, body {
    background: url(asset_path('pat.png'));
 
 }
+h1{
+            text-shadow: 0px 2px 2px #333333;
+}
 section {
    //border-bottom: 1px solid $gray;
    &.head {
@@ -48,6 +51,7 @@ section {
       //@include radial-gradient($red, $dark_red);
       //background: $almost_white;
       background: url('<%= image_path("radio_bg.png") %>') center center no-repeat;
+
       header {
          //padding-top: 30px;
          height: 3.5em;
@@ -55,6 +59,7 @@ section {
          background: $black;
          h1 {
             padding-top: 0.25em;
+            text-shadow: 0px 2px 2px #333333;
 
          }
          .menu {
@@ -85,8 +90,10 @@ section {
    &.graybg {
       background: $very_light_gray;
    }
+
+
    &.content {
-      padding: 5em 0;
+      padding: 20% 0;
    }
    .footer {
       color: $gray;
@@ -126,6 +133,8 @@ section {
    padding-left:20px;
    padding-right:20px;
 }
+
+
 
 .btn {
    cursor: pointer;
@@ -381,4 +390,5 @@ section {
    opacity:0.8;
    border-radius: 4px;
    border:1px $darker_gray solid;
+   text-align:center;
 }

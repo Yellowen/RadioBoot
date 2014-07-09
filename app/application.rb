@@ -44,7 +44,6 @@ class RadioApp < Sinatra::Application
 
   before '/:locale/*' do
     I18n.locale = params[:locale]
-
     if settings.locales.include? params[:locale]
       @locale = params[:locale]
       request.path_info = '/' + params[:splat][0]
