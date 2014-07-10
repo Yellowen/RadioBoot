@@ -19,7 +19,7 @@
     <div class="body">
     <%= yield %>
     </div>
-    <nav class="js-menu sliding-menu-content">
+    <nav class="js-menu sliding-menu-content <%= @locale == 'fa'? 'rtlcontent' : 'ltrcontent' %>">
       <ul>
         <li><a href="/"><i class="fa fa-home"></i> <%= t(:home) %></a></li>
         <li><a href="/archive/"><i class="fa fa-archive"></i> <%= t(:archive) %></a></li>

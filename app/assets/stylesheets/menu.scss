@@ -19,10 +19,18 @@ $sliding-menu-color-hover: #fff;
    }
 }
 
-.sliding-menu-content {
+.ltrcontent {
+   @include position(fixed, 0px auto 0px 0px);
+   @include transform(translateX(-220px));
+}
+.rtlcontent {
    @include position(fixed, 0px 0px 0px auto);
-   @include size(220px 100%);
    @include transform(translateX(220px));
+}
+
+.sliding-menu-content {
+
+   @include size(220px 100%);
    @include transition(all .25s linear);
    opactiy: 0.3;
    background: $sliding-menu-background;
