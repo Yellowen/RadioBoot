@@ -43,19 +43,23 @@ class RadioApp < Sinatra::Application
   end
 
   before '/:locale/*' do
-    I18n.locale = params[:locale]
     if settings.locales.include? params[:locale]
       @locale = params[:locale]
+      I18n.locale = @locale
       request.path_info = '/' + params[:splat][0]
     else
       @locale = 'fa'
+      I18n.locale = @locale
       request.path_info = "/#{params[:locale]}/#{params[:splat][0]}"
     end
   end
 
   get '/' do
     # use the views/index.erb file
-    @locale ||= "fa"
+    unless defined? @locale
+      @locale = 'fa'
+      I18n.locale = 'fa'
+    end
     erb :'index.html'
   end
 end
