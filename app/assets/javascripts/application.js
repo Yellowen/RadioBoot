@@ -5,6 +5,7 @@ $(document).ready(function() {
     $('.body').fullpage({
         css3: false,
         scrollingSpeed: 700,
-        easing: 'easeInQuart'
+        easing: 'easeInQuart',
+        anchors: ['home', 'listen', 'sponsors']
     });
 });

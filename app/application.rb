@@ -62,4 +62,12 @@ class RadioApp < Sinatra::Application
     end
     erb :'index.html'
   end
+
+  get '/archive/' do
+    erb :'archive.html'
+  end
+
+  get '/faq/' do
+    erb :'faq.html'
+  end
 end

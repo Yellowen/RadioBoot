@@ -36,12 +36,27 @@
       <div class="shift3 column6 bigtitle center">
 
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
+      <h1><%= t(:about) %></h1>
+      <div class="row">
 
-          <h1><%= t(:about) %></h1>
+      <br/>
+
 
       </div>
     </div>
+
+
   </header>
+      <div class=" center social shift3 column6">
+      <br />
+        <span class="btn twitter"><a href="http://twitter.com/radioboot"><i class="fa fa-twitter fa-lg"></i></a></span>
+        <span class="btn gray"><a href="http://github.com/radioboot"><i class="fa fa-lg fa-github"></i></a></span>
+        <span class="btn blue"><a href="http://www.facebook.com/radioboot"><i class="fa fa-lg fa-facebook-square"></i></a></span>
+        <span class="btn red"><a href="https://www.google.com/+radioboot"><i class="fa fa-lg fa-google-plus"></i></a></span>
+        <br/><br/><br/>
+      <a data-menuanchor="listen" href="#listen" ><i class="fa fa-arrow-down fa-4x"></i> </a>
+
+      </div>
 </section>
 
 <section class="section content blue">
@@ -60,22 +75,18 @@
 </section>
 
 <section class="section content green">
-
-</section>
-
-
-<section class="section content black">
      <div class="row center">
         <div class="row sponsorboxes">
         <h4 ><%= t(:thanks_sponsors) %></h4>
-          <a href="//karajlug.org" class="shift3 column3 box center yellowenbg">
+        <br/>
+          <a href="//yellowen.com" class="shift3 column3 box center yellowenbg">
           </a>
-          <a href="//yellowen.com" class="column3  box center rubycentralbg">
+          <a href="//karajlug.org" class="column3  box center karajlugbg">
           </a>
         </div>
         <div class="row center"><br />
           <span class="shift4 column4"><label for="modal-2">
-            <div class="btn black"><i class="fa fa-sign-in"></i> Become an sponsor</div>
+            <div class="btn black"><i class="fa fa-sign-in"></i> <%= t(:become_sponsor) %></div>
           </label>
           </span>
         </div>
