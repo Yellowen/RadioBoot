@@ -16,7 +16,46 @@
 
   </head>
   <body>
+
+
     <div class="body">
+
+    <div class="fixed fullwidth">
+      <header>
+        <div class="container">
+          <div class="row">
+            <% if @locale == 'fa' %>
+              <div class="column6">
+                <nav class="menu text-left">
+                  <ul>
+                    <li><a class="js-menu-trigger" href="#"><i class="fa fa-bars fa-lg"></i> </a></li>
+
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="column6  title">
+                <h1 class="logo"><%= t(:radio_boot) %></h1>
+              </div>
+            <% else %>
+              <div class="column6  title">
+                <h1 class="logo"><%= t(:radio_boot) %></h1>
+              </div>
+
+              <div class="column6">
+                <nav class="menu text-left">
+                  <ul>
+                    <li><a class="js-menu-trigger" href="#"><i class="fa fa-bars fa-lg"></i> </a></li>
+                  </ul>
+                </nav>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      </header>
+
+    </div>
     <%= yield %>
     </div>
     <nav class="js-menu sliding-menu-content <%= @locale == 'fa'? 'rtlcontent' : 'ltrcontent' %>">

@@ -1,9 +1,9 @@
-$sliding-menu-border-color: $dark_gray;
-$sliding-menu-background: $lighter_gray;//lighten($sliding-menu-border-color, 5);
-$sliding-menu-color: $dark_blue;
+$sliding-menu-border-color: $very_light_gray;
+$sliding-menu-background: white;//lighten($sliding-menu-border-color, 5);
+$sliding-menu-color: $gray;
 $sliding-menu-border: 1px solid $sliding-menu-border-color;
-$sliding-menu-background-hover: $base-accent-color;
-$sliding-menu-color-hover: $gray;
+$sliding-menu-background-hover: $light_gray;
+$sliding-menu-color-hover: $dark-gray;
 
 .sliding-menu-button {
    @include button(simple, $base-body-color);
