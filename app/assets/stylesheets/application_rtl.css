@@ -1,8 +1,7 @@
 /*
  *= require_self
+ *= require lib/semantic.rtl
  *= require home
- *= require rtl
-
 */
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 

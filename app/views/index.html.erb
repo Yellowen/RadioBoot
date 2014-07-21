@@ -1,44 +1,47 @@
-<section class="section head">
-
-  <div class="shift3 column6 bigtitle center">
-
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
-    <h1><%= t(:about) %></h1>
-    <div class="row">
-
-      <br/>
-
+<section class="gray head section">
+  <div class="ui page stackable grid">
+    <div class="first row">
+    <div class="center aligned column">
+      <h1 class="logo">boot</h1>
+      <h3><%= t(:about) %></h3>
     </div>
-  </div>
+    </div>
 
-
-  <div class=" center social shift3 column6">
-    <br />
-    <span class="btn twitter"><a href="http://twitter.com/radioboot"><i class="fa fa-twitter fa-lg"></i></a></span>
-    <span class="btn gray"><a href="http://github.com/radioboot"><i class="fa fa-lg fa-github"></i></a></span>
-    <span class="btn blue"><a href="http://www.facebook.com/radioboot"><i class="fa fa-lg fa-facebook-square"></i></a></span>
-    <span class="btn red"><a href="https://www.google.com/+radioboot"><i class="fa fa-lg fa-google-plus"></i></a></span>
-    <br/><br/><br/>
-    <a data-menuanchor="listen" href="#listen" ><i class="fa fa-arrow-down fa-4x"></i> </a>
-
-  </div>
-</section>
-
-<section class="section content blue">
-  <div class="">
-    <div class="row content">
-      <div class="shift3 column6 center">
-        <h1>#2</h1>
-        <h3>شروع</h3>
-        <div class="shift4 column4">
-<BR>
+    <div class="first row">
+      <div class="column">
+        <div class="ui three column stackable grid">
+          <div class="three wide column"></div>
+          <div class="ten wide column">
+            <div class="ui action huge fluid input">
+              <input type="email" id="email" placeholder="<%= t(:email) %>">
+              <div class="ui green icon button"><i class="email icon"></i></div>
+            </div>
+            <div class="three wide column"></div>
+          </div>
         </div>
+      </div>
+    </div>
+
+
+    <div class="first row">
+      <div class="center aligned column">
+        <a data-menuanchor="listen" href="#listen" ><i class="large down icon"></i> </a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section content dark_blue">
+<section class="blue player section">
+          <span class="ui button twitter"><a href="http://twitter.com/radioboot"><i class="fa fa-twitter fa-lg"></i></a></span>
+        <span class="ui button gray"><a href="http://github.com/radioboot"><i class="fa fa-lg fa-github"></i></a></span>
+        <span class="ui button blue"><a href="http://www.facebook.com/radioboot"><i class="fa fa-lg fa-facebook-square"></i></a></span>
+        <span class="ui button red"><a href="https://www.google.com/+radioboot"><i class="fa fa-lg fa-google-plus"></i></a></span>
+
+  <div class="ui page stackable grid">
+  </div>
+</section>
+
+<section class="dark-blue sponsores section">
      <div class="row center">
         <div class="row sponsorboxes">
         <h4 ><%= t(:thanks_sponsors) %></h4>
@@ -50,12 +53,13 @@
         </div>
         <div class="row center"><br />
           <span class="shift4 column4"><label for="modal-2">
-            <div class="btn black"><i class="fa fa-sign-in"></i> <%= t(:become_sponsor) %></div>
+            <div class="ui button black"><i class="fa fa-sign-in"></i> <%= t(:become_sponsor) %></div>
           </label>
           </span>
         </div>
 </section>
-<section>
+
+<footer>
   <div class="footer">
     <div class="container">
       <div class="row">
@@ -75,4 +79,4 @@
       </div>
     </div>
   </div>
-</section>
+</footer>

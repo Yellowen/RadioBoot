@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><%= @title %></title>
     <meta name="viewport" content="width=device-width">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="<%= image_path 'fav.png' %>" />
     <meta name="description" content="Radio Boot, A podcast for Free software lovers">
     <link rel="author" href="https://www.google.com/+RadioBoot"/>
@@ -18,55 +17,20 @@
   <body>
 
 
-    <div class="body">
-
-    <div class="fixed fullwidth">
-      <header>
-        <div class="container">
-          <div class="row">
-            <% if @locale == 'fa' %>
-              <div class="column6">
-                <nav class="menu text-left">
-                  <ul>
-                    <li><a class="js-menu-trigger" href="#"><i class="fa fa-bars fa-lg"></i> </a></li>
-
-                  </ul>
-                </nav>
-              </div>
-
-              <div class="column6  title">
-                <h1 class="logo"><%= t(:radio_boot) %></h1>
-              </div>
-            <% else %>
-              <div class="column6  title">
-                <h1 class="logo"><%= t(:radio_boot) %></h1>
-              </div>
-
-              <div class="column6">
-                <nav class="menu text-left">
-                  <ul>
-                    <li><a class="js-menu-trigger" href="#"><i class="fa fa-bars fa-lg"></i> </a></li>
-                  </ul>
-                </nav>
-              </div>
-
-            <% end %>
-          </div>
+    <div class="ui gray computer only fixed inverted menu">
+      <div class="ui page grid">
+        <h1 class="item"><%= t(:radio_boot) %></h1>
+        <div class="right menu">
+          <a class="item">Sign Up</a>
+          <a class="item">Help</a>
         </div>
-      </header>
-
+      </div>
     </div>
+
+
     <%= yield %>
-    </div>
-    <nav class="js-menu sliding-menu-content <%= @locale == 'fa'? 'rtlcontent' : 'ltrcontent' %>">
-      <ul>
-        <li><a href="/"><i class="fa fa-home"></i> <%= t(:home) %></a></li>
-        <li><a href="/archive/"><i class="fa fa-archive"></i> <%= t(:archive) %></a></li>
-        <li><a href="/faq/"><i class="fa fa-question"></i> <%= t(:faq) %></a></li>
-      </ul>
-    </nav>
 
-    <div class="js-menu-screen menu-screen"></div>
+
 
     <!-- Start of StatCounter Code for Default Guide -->
     <script type="text/javascript">
