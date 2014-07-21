@@ -16,6 +16,20 @@ class RadioApp < Sinatra::Application
     I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
     I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
     I18n.backend.load_translations
+
+    Sprockets::Helpers.configure do |config|
+      config.environment = sprockets
+      config.prefix      = assets_prefix
+      config.digest      = digest_assets
+      config.public_path = public_folder
+
+      # Force to debug mode in development mode
+      # Debug mode automatically sets
+      # expand = true, digest = false, manifest = false
+      config.debug       = true if development?
+    end
+
+
   end
 
   set :assets_precompile, %w(application.js application.css *.png *.jpg *.svg *.eot *.ttf *.woff)
@@ -25,7 +39,7 @@ class RadioApp < Sinatra::Application
 
   register Sinatra::AssetPipeline
 
-  @title = "RadioBoot"
+  @title = 'RadioBoot'
 
   helpers do
     def t(*args)
