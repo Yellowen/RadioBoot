@@ -21,8 +21,24 @@
       <div class="ui page grid">
         <h1 class="item"><%= t(:radio_boot) %></h1>
         <div class="right menu">
-          <a class="item">Sign Up</a>
-          <a class="item">Help</a>
+
+          <a href="#listen" class="item"><%= t(:last_episode) %></a>
+          <a href="#listen" class="item"><%= t(:archive) %></a>
+          <a href="#listen" class="item"><%= t(:faq) %></a>
+
+          <div class="ui dropdown item">
+            <%= t(:follow_us) %> <i class="dropdown icon"></i>
+            <div class="gray menu">
+              <a class="item" href="http://twitter.com/radioboot"><i class="fa fa-twitter fa-lg"></i> <%= t(:twitter) %></a>
+              <a class="item" href="http://www.facebook.com/radioboot"><i class="fa fa-lg fa-facebook-square"></i> <%= t(:facebook) %></a>
+              <a class="item" href="https://www.google.com/+radioboot"><i class="fa fa-lg fa-google-plus"></i> <%= t(:googleplus) %></a>
+            </div>
+          </div>
+          <div class="item">
+
+            <a href="#listen" class="item ui blue button"><%= t(:lang) %></a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -30,6 +46,13 @@
 
     <%= yield %>
 
+
+    <script>
+      $(".ui.dropdown").dropdown();
+      //$(".ui.computer.sidebar").sidebar('attach events', '.toggle.button.computer');
+      $(".ui.sidebar").sidebar({overlay: true}).sidebar('attach events', '.toggle.button.mobile');
+
+    </script>
 
 
     <!-- Start of StatCounter Code for Default Guide -->

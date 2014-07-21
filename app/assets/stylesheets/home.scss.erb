@@ -1,6 +1,5 @@
 @import "variables";
 
-
 * {
    padding: 0;
    margin: 0;
@@ -17,14 +16,24 @@ html, body {
 
 a{
    color: $almost_white;
+   text-decoration: none;
 }
 
 .ui.gray.inverted.menu {
    background: $very_light_gray;
+   border-bottom: 1px solid $lighter_gray;
    .item {
       color: $darker_gray;
    }
+   .menu {
+      background: $very_light_gray;
+      .item {
+         color: $darker_gray;
+      }
+   }
+
 }
+
 
 .fixed {
    position: fixed;
@@ -33,6 +42,7 @@ a{
 section {
    //border-bottom: 1px solid $gray;
    min-height: 60rem;
+
    &.gray {
       background: $very_light_gray;
       color: $dark_gray;
@@ -50,6 +60,10 @@ section {
 
    &.head {
       overflow-x: hidden;
+   }
+
+   .ui.page.grid.middle {
+      padding-top: 20rem !important;
    }
 }
 
@@ -149,5 +163,20 @@ section {
 .row {
    &.first {
       margin-top: 10rem !important;
+   }
+}
+
+.scroll {
+   color: $dark_gray;
+}
+
+.slug {
+   font-size: 2em;
+}
+
+.opacity_link {
+   opacity: 0.5;
+   &:hover {
+      opacity: 1;
    }
 }

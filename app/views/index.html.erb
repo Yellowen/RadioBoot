@@ -3,7 +3,7 @@
     <div class="first row">
     <div class="center aligned column">
       <h1 class="logo">boot</h1>
-      <h3><%= t(:about) %></h3>
+      <h3 class="slug"><%= t(:about) %></h3>
     </div>
     </div>
 
@@ -13,9 +13,11 @@
           <div class="three wide column"></div>
           <div class="ten wide column">
             <div class="ui action huge fluid input">
-              <input type="email" id="email" placeholder="<%= t(:email) %>">
-              <div class="ui green icon button"><i class="mail outline icon"></i></div>
+              <input type="email" id="email" placeholder="<%= t(:enter_email) %>">
+            <div class="ui black icon button"><%= t(:subscribe) %></div>
             </div>
+
+
             <div class="three wide column"></div>
           </div>
         </div>
@@ -25,44 +27,61 @@
 
     <div class="first row">
       <div class="center aligned column">
-        <a data-menuanchor="listen" href="#listen" ><i class="large down icon"></i> </a>
+        <a class="scroll" href="#listen" ><i class="big down arrow icon"></i> </a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="blue player section">
-          <span class="ui button twitter"><a href="http://twitter.com/radioboot"><i class="fa fa-twitter fa-lg"></i></a></span>
-        <span class="ui button gray"><a href="http://github.com/radioboot"><i class="fa fa-lg fa-github"></i></a></span>
-        <span class="ui button blue"><a href="http://www.facebook.com/radioboot"><i class="fa fa-lg fa-facebook-square"></i></a></span>
-        <span class="ui button red"><a href="https://www.google.com/+radioboot"><i class="fa fa-lg fa-google-plus"></i></a></span>
-
   <div class="ui page stackable grid">
+
   </div>
 </section>
 
 <section class="dark-blue sponsores section">
-     <div class="row center">
-        <div class="row sponsorboxes">
-        <h4 ><%= t(:thanks_sponsors) %></h4>
-        <br/>
-          <a href="//yellowen.com" class="shift3 column3 box center yellowenbg">
-          </a>
-          <a href="//karajlug.org" class="column3  box center karajlugbg">
-          </a>
-        </div>
-        <div class="row center"><br />
-          <span class="shift4 column4"><label for="modal-2">
-            <div class="ui button black"><i class="fa fa-sign-in"></i> <%= t(:become_sponsor) %></div>
-          </label>
-          </span>
-        </div>
+  <div class="ui page stackable grid middle">
+     <div class="row">
+       <div class="center aligned column">
+         <h4 ><%= t(:thanks_sponsors) %></h4>
+       </div>
+
+     </div>
+     <div class="row">
+       <div class="column">
+
+         <div class="ui four column stackable grid">
+           <div class="three wide column"></div>
+
+           <div class="five wide center aligned column">
+             <a href="//yellowen.com">
+               <img src="<%= image_path('yellowen_logo.png') %>" class="opacity_link" />
+             </a>
+           </div>
+
+           <div class="five wide center aligned column">
+             <a href="//karajlug.org">
+               <img src="<%= image_path('karajlug_logo.png') %>" class="opacity_link" />
+             </a>
+           </div>
+           <div class="three wide column"></div>
+         </div>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="center aligned column">
+         <div class="ui left labeled icon button big black"><i class="dollar icon"></i> <%= t(:become_sponsor) %></div>
+       </div>
+     </div>
+  </div>
 </section>
 
 <footer>
   <div class="footer">
     <div class="container">
       <div class="row">
+
         <% if @locale == "fa" %>
           <div class="column6 text-left">
             <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
