@@ -41,8 +41,8 @@ a{
 
 section {
    //border-bottom: 1px solid $gray;
-   min-height: 60rem;
-
+   min-height: 55rem;
+   position: relative;
    &.gray {
       background: $very_light_gray;
       color: $dark_gray;
@@ -111,6 +111,10 @@ section {
 
 
 .logo {
+   text-indent: -9999px;
+   height: 100px;
+   margin: 1em 0;
+   background: url('<%= image_path("logo.svg") %>')  center 0 no-repeat transparent;
    padding-left:20px;
    padding-right:20px;
 }
@@ -162,7 +166,10 @@ section {
 
 .row {
    &.first {
-      margin-top: 10rem !important;
+      margin-top: 9rem !important;
+   }
+   &.second {
+      margin-top: 5rem !important;
    }
 }
 
