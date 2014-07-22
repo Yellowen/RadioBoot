@@ -5,6 +5,6 @@
 */
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 
-h1,h2,h3,p,a, *{
+h1,h2,h3,p,a, .ui, input{
    font-family: 'Droid Arabic Naskh',tahoma !important;
 }

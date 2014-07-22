@@ -29,14 +29,16 @@
           <div class="ui dropdown item">
             <%= t(:follow_us) %> <i class="dropdown icon"></i>
             <div class="gray menu">
-              <a class="item" href="http://twitter.com/radioboot"><i class="fa fa-twitter fa-lg"></i> <%= t(:twitter) %></a>
-              <a class="item" href="http://www.facebook.com/radioboot"><i class="fa fa-lg fa-facebook-square"></i> <%= t(:facebook) %></a>
-              <a class="item" href="https://www.google.com/+radioboot"><i class="fa fa-lg fa-google-plus"></i> <%= t(:googleplus) %></a>
+              <a class="item" href="http://twitter.com/radioboot"><i class="twitter icon"></i> <%= t(:twitter) %></a>
+              <a class="item" href="http://www.facebook.com/radioboot"><i class="facebook squere icon"></i> <%= t(:facebook) %></a>
+              <a class="item" href="https://www.google.com/+radioboot"><i class="google plus icon"></i> <%= t(:googleplus) %></a>
+              <a class="item" href="/feed"><i class="rss icon"></i> <%= t(:rss) %></a>
+
             </div>
           </div>
           <div class="item">
 
-            <a href="#listen" class="item ui blue button"><%= t(:lang) %></a>
+            <a href="/<%= @locale == 'fa' ?  'en' : 'fa' %>/" class="item ui green tiny button"><%= t(:lang) %></a>
           </div>
 
         </div>
