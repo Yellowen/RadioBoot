@@ -4,3 +4,7 @@
  *= require home
 */
 @import url("http://fonts.googleapis.com/css?family=Roboto");
+
+h1,h2,h3,p,a, .ui, input{
+   font-family: 'Roboto', sans-serif;
+}

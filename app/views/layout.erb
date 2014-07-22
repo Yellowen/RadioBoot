@@ -19,12 +19,12 @@
 
     <div class="ui gray computer only fixed inverted menu">
       <div class="ui page grid">
-        <h1 class="item"><%= t(:radio_boot) %></h1>
+        <a href="/"><h1 class="item"><%= t(:radio_boot) %></h1></a>
         <div class="right menu">
 
           <a href="#listen" class="item"><%= t(:last_episode) %></a>
-          <a href="#listen" class="item"><%= t(:archive) %></a>
-          <a href="#listen" class="item"><%= t(:faq) %></a>
+          <a href="/archive" class="item"><%= t(:archive) %></a>
+          <a href="/faq" class="item"><%= t(:faq) %></a>
 
           <div class="ui dropdown item">
             <%= t(:follow_us) %> <i class="dropdown icon"></i>
@@ -47,6 +47,23 @@
 
 
     <%= yield %>
+
+
+
+    <footer>
+      <div class="ui two column page grid">
+        <div class="row">
+          <div class="column">
+            <div class=""><%= t(:copyright) %></div>
+          </div>
+            <div class="column"></div>
+
+        </div>
+      </div>
+
+    </footer>
+
+
 
 
     <script>
