@@ -17,34 +17,60 @@
   <body>
 
 
-    <div class="ui gray computer only fixed inverted menu">
-      <div class="ui page grid">
-        <a href="/"><h1 class="item"><%= t(:radio_boot) %></h1></a>
-        <div class="right menu">
 
-          <a href="#listen" class="item"><%= t(:last_episode) %></a>
-          <a href="/archive" class="item"><%= t(:archive) %></a>
-          <a href="/faq" class="item"><%= t(:faq) %></a>
+    <div class="ui mobile tablet only grid">
+      <div class="ui gray fixed inverted menu">
+        <div class="ui page grid">
+          <a href="/"><h1 class="item"><%= t(:radio_boot) %></h1></a>
+          <div class="right menu">
+            <div class="item toggle button" ><i class="reorder link big icon"></i></div>
+          </div>
+        </div>
+      </div>
 
-          <div class="ui dropdown item">
-            <%= t(:follow_us) %> <i class="dropdown icon"></i>
-            <div class="gray menu">
-              <a class="item" href="http://twitter.com/radioboot"><i class="twitter icon"></i> <%= t(:twitter) %></a>
-              <a class="item" href="http://www.facebook.com/radioboot"><i class="facebook squere icon"></i> <%= t(:facebook) %></a>
-              <a class="item" href="https://www.google.com/+radioboot"><i class="google plus icon"></i> <%= t(:googleplus) %></a>
-              <a class="item" href="/feed"><i class="rss icon"></i> <%= t(:rss) %></a>
+    </div>
 
+    <div class="ui mobile only thin left sidebar floating vertical menu">
+      <div class="item"><a href="#listen"><%= t(:last_episode) %></a></div>
+      <div class="item"><a href="/archive"><%= t(:archive) %></a></div>
+      <div class="item"><a href="/faq"><%= t(:faq) %></a></div>
+      <div class="item"><a href="http://twitter.com/radioboot"><i class="twitter icon"></i> <%= t(:twitter) %></a></div>
+      <div class="item"><a href="http://www.facebook.com/radioboot"><i class="facebook squere icon"></i> <%= t(:facebook) %></a></div>
+      <div class="item"><a href="https://www.google.com/+radioboot"><i class="google plus icon"></i> <%= t(:googleplus) %></a></div>
+      <div class="item"><a href="/feed"><i class="rss icon"></i> <%= t(:rss) %></a></div>
+      <div class="item"><a href="/<%= @locale == 'fa' ?  'en' : 'fa' %>/" class="ui green tiny fluid button"> <%= t(:lang) %></a></div>
+      <div class="item"><a class="blackcolored toggle button mobile" href="#"><i class="remove icon"></i> <%= t(:close) %></a></div>
+    </div>
+
+    <div class="ui computer only grid">
+      <div class="ui gray fixed inverted menu">
+        <div class="ui page grid">
+          <a href="/"><h1 class="item"><%= t(:radio_boot) %></h1></a>
+          <div class="right menu">
+
+            <a href="#listen" class="item"><%= t(:last_episode) %></a>
+            <a href="/archive" class="item"><%= t(:archive) %></a>
+            <a href="/faq" class="item"><%= t(:faq) %></a>
+
+            <div class="ui dropdown item">
+              <%= t(:follow_us) %> <i class="dropdown icon"></i>
+              <div class="gray menu">
+                <a class="item" href="http://twitter.com/radioboot"><i class="twitter icon"></i> <%= t(:twitter) %></a>
+                <a class="item" href="http://www.facebook.com/radioboot"><i class="facebook squere icon"></i> <%= t(:facebook) %></a>
+                <a class="item" href="https://www.google.com/+radioboot"><i class="google plus icon"></i> <%= t(:googleplus) %></a>
+                <a class="item" href="/feed"><i class="rss icon"></i> <%= t(:rss) %></a>
+
+              </div>
             </div>
-          </div>
-          <div class="item">
+            <div class="item">
 
-            <a href="/<%= @locale == 'fa' ?  'en' : 'fa' %>/" class="item ui green tiny button"><%= t(:lang) %></a>
-          </div>
+              <a href="/<%= @locale == 'fa' ?  'en' : 'fa' %>/" class="item ui green tiny button"><%= t(:lang) %></a>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
-
 
     <%= yield %>
 
@@ -69,7 +95,7 @@
     <script>
       $(".ui.dropdown").dropdown();
       //$(".ui.computer.sidebar").sidebar('attach events', '.toggle.button.computer');
-      $(".ui.sidebar").sidebar({overlay: true}).sidebar('attach events', '.toggle.button.mobile');
+      $(".ui.sidebar").sidebar({overlay: true}).sidebar('attach events', '.toggle.button');
 
     </script>
 
