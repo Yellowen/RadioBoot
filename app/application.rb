@@ -94,12 +94,11 @@ class RadioApp < Sinatra::Application
   post '/subscribe' do
     content_type :json
 
-    email_validation = validate_email(params[:email])
-    puts ">>>>>>>>>>>>>>>>>>>>>>>> #{email_validation}"
-    if email_validation['is_valid']
-      puts "!!!!!!!!!!!"
+    email_validation = JSON.parse(validate_email(params[:email]))
+    if email_validation['is_valid'] == true
       member = add_list_member(params[:email])
-      puts "<<<<<<<<<<<<<<<< #{member}"
+
+      return JSON.generate({status: member['error'], msg: member['msg']}) if member.include? 'error'
 
       if member['member']['subscribed']
         return JSON.generate({status: '0'})
@@ -110,6 +109,4 @@ class RadioApp < Sinatra::Application
       return JSON.generate({status: '2'})
     end
   end
-
-
 end

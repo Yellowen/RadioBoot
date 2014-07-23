@@ -1,4 +1,7 @@
 en:
+  not_valid: "Your email is not valid"
+  failed_to_add: "Failed to add your address please try again."
+  already_exists: "You already subscribed ;)"
   congrats: "You just subscribed buddy."
   last_episode: "Last Episode"
   archive: "Archive"
