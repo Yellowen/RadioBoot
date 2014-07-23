@@ -1,3 +1,4 @@
+require 'json'
 require 'sinatra/base'
 require 'sinatra/asset_pipeline'
 require 'i18n'
@@ -11,33 +12,21 @@ class RadioApp < Sinatra::Application
   enable :sessions
   enable :logging
 
-
-  configure do
-    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
-    I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
-    I18n.backend.load_translations
-
-    #Sprockets::Helpers.configure do |config|
-      #config.environment = sprockets
-      #config.prefix      = assets_prefix
-      #config.digest      = digest_assets
-      #config.public_path = public_folder
-
-      # Force to debug mode in development mode
-      # Debug mode automatically sets
-      # expand = true, digest = false, manifest = false
-      #config.debug       = true if development?
-    #end
-
-
-  end
-
   set :assets_precompile, %w(application.js application.css *.png *.jpg *.svg *.eot *.ttf *.woff)
   set :assets_prefix, %w(app/assets)
   set :assets_css_compressor, :sass
   set :assets_js_compressor, :uglifier
 
   register Sinatra::AssetPipeline
+
+
+  configure do
+    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+    I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
+    I18n.backend.load_translations
+
+    mime_type :json, 'text/json'
+  end
 
   @title = 'RadioBoot'
 
@@ -83,5 +72,12 @@ class RadioApp < Sinatra::Application
 
   get '/faq/' do
     erb :'faq.html'
+  end
+
+
+  post '/subscribe' do
+    content_type :json
+
+    JSON.generate({status: 200})
   end
 end

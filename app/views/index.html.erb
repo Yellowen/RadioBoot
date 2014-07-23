@@ -14,7 +14,14 @@
           <div class="ten wide column">
             <div class="ui action huge fluid input">
               <input type="email" id="email" placeholder="<%= t(:enter_email) %>">
-            <div class="ui black icon button"><%= t(:subscribe) %></div>
+              <div class="ui black icon button" id="subscribe"><%= t(:subscribe) %></div>
+
+
+              <div class="ui success message hidden">
+                <div class="header">
+                  <%= t(:congrats) %>
+                </div>
+              </div>
             </div>
 
 
