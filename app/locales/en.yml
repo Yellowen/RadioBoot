@@ -1,4 +1,5 @@
 en:
+  access_denied: "Access Denied"
   signin: "Sign In With"
   github: "Github"
   not_valid: "Your email is not valid"

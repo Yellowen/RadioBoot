@@ -26,7 +26,7 @@ class RadioApp < Sinatra::Application
   set :mailinglist, 'newsletter@radioboot.com'
   set :mailgun_api_key, ENV['MAILGUN_API_KEY']
 
-  set :admins, ['lxsameer', 'yottanami']
+  set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gnu.org'}
 
   @title = 'RadioBoot'
 
@@ -78,7 +78,11 @@ class RadioApp < Sinatra::Application
     end
 
     def admin?
-      settings.admins.include? user
+      if session[:google]
+        settings.admins.values.include? user
+      else
+        settings.admins.keys.include? user
+      end
     end
 
     def user
@@ -128,7 +132,15 @@ class RadioApp < Sinatra::Application
   end
 
   get '/signin/' do
+    session[:next] = params[:next]
     erb :'signin.html'
+  end
+
+  get '/admin/' do
+    return redirect to('/signin/?next=/admin/') unless signed_in?
+    return erb :'403.html' #unless admin?
+
+    erb :'admin.html'
   end
 
   post '/subscribe' do
@@ -160,10 +172,16 @@ class RadioApp < Sinatra::Application
     session[:uid] = env['omniauth.auth']['uid']
     if params[:service] == 'google_oauth2'
       session[:nickname] = env['omniauth.auth']['info']['email']
+      session[:google] = true
     else
       session[:nickname] = env['omniauth.auth']['info']['nickname']
+      session[:google] = false
     end
     # this is the main endpoint to your application
+    if session[:next]
+      session[:next] = nil
+      return redirect to(session[:next])
+    end
     redirect to('/')
   end
 
