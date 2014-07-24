@@ -7,7 +7,7 @@ require 'i18n/backend/fallbacks'
 require 'omniauth-twitter'
 require 'omniauth-github'
 require 'omniauth-facebook'
-require 'omniauth-google'
+require 'omniauth-google-oauth2'
 
 require_relative './lib/mailgun'
 
@@ -51,6 +51,8 @@ class RadioApp < Sinatra::Application
     use OmniAuth::Builder do
       provider :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
       provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+      provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
+
     end
 
   end
@@ -149,13 +151,18 @@ class RadioApp < Sinatra::Application
   end
 
   get '/auth/:service/callback' do
-    unless ['github', 'twitter', 'faceboot', 'google'].include? params[:service]
+    unless ['github', 'twitter', 'faceboot', 'google_oauth2'].include? params[:service]
       return status 404
     end
 
     # probably you will need to create a user in the database too...
+
     session[:uid] = env['omniauth.auth']['uid']
-    session[:nickname] = env['omniauth.auth']['info']['nickname']
+    if params[:service] == 'google_oauth2'
+      session[:nickname] = env['omniauth.auth']['info']['email']
+    else
+      session[:nickname] = env['omniauth.auth']['info']['nickname']
+    end
     # this is the main endpoint to your application
     redirect to('/')
   end
