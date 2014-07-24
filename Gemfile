@@ -18,3 +18,8 @@ gem 'sinatra-asset-pipeline'
 gem 'i18n'
 gem 'rest-client'
 gem 'multimap'
+
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+gem 'omniauth-google'

@@ -4,6 +4,11 @@ require 'sinatra/asset_pipeline'
 require 'i18n'
 require 'i18n/backend/fallbacks'
 
+require 'omniauth-twitter'
+require 'omniauth-github'
+require 'omniauth-facebook'
+require 'omniauth-google'
+
 require_relative './lib/mailgun'
 
 # Main Sinatra application class
