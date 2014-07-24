@@ -26,6 +26,8 @@ class RadioApp < Sinatra::Application
   set :mailinglist, 'newsletter@radioboot.com'
   set :mailgun_api_key, ENV['MAILGUN_API_KEY']
 
+  set :admins, ['lxsameer', 'yottanami']
+
   @title = 'RadioBoot'
 
   # Enabling features
@@ -45,6 +47,12 @@ class RadioApp < Sinatra::Application
     I18n.backend.load_translations
 
     mime_type :json, 'text/json'
+
+    use OmniAuth::Builder do
+      provider :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
+      provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+    end
+
   end
 
   # Template helpers
@@ -61,6 +69,19 @@ class RadioApp < Sinatra::Application
         "<a href='#{url}'>#{title} <i class='#{icon}'></i></a>"
       end
     end
+
+    # define a current_user method, so we can be sure if an user is authenticated
+    def signed_in?
+      !session[:uid].nil?
+    end
+
+    def admin?
+      settings.admins.include? user
+    end
+
+    def user
+      session[:nickname]
+    end
   end
 
   # This section runs before any action with /:locale/ url
@@ -76,6 +97,15 @@ class RadioApp < Sinatra::Application
     end
   end
 
+  before '/admin/' do
+    # we do not want to redirect to twitter when the path info starts
+    # with /auth/
+    pass if request.path_info =~ /^\/auth\//
+
+    # /auth/twitter is captured by omniauth:
+    # when the path info matches /auth/twitter, omniauth will redirect to twitter
+    redirect to('/signin/') unless signed_in?
+  end
 
   # Actions
   get '/' do
@@ -117,4 +147,23 @@ class RadioApp < Sinatra::Application
       return JSON.generate({status: '2'})
     end
   end
+
+  get '/auth/:service/callback' do
+    unless ['github', 'twitter', 'faceboot', 'google'].include? params[:service]
+      return status 404
+    end
+
+    # probably you will need to create a user in the database too...
+    session[:uid] = env['omniauth.auth']['uid']
+    session[:nickname] = env['omniauth.auth']['info']['nickname']
+    # this is the main endpoint to your application
+    redirect to('/')
+  end
+
+  get '/auth/failure' do
+    # omniauth redirects to /auth/failure when it encounters a problem
+    # so you can implement this as you please
+  end
+
+
 end
