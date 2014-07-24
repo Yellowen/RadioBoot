@@ -1,4 +1,6 @@
 fa:
+  signin: "ورود با "
+  github: "گیت هاب"
   not_valid: "ایمیلت درست نیست."
   failed_to_add: "نشد که بشه. دوباره امتحان کن."
   already_exists: "شما که قبلا عضو شدی!"

@@ -43,6 +43,7 @@ section {
    //border-bottom: 1px solid $gray;
    min-height: 55rem;
    position: relative;
+
    &.gray {
       background: $very_light_gray;
       color: $dark_gray;
@@ -64,6 +65,24 @@ section {
 
    .ui.page.grid.middle {
       padding-top: 20rem !important;
+   }
+   &.signin {
+      color: $dark_gray;
+      padding-top: 15rem !important;
+
+      p {
+         font-size: 1.3rem;
+      }
+      a {
+         color: $lighter_gray;
+         transition: color 300ms linear 0ms;
+         &:hover {
+            color: $dark_gray;
+            transition: color 300ms linear 0ms;
+
+         }
+      }
+
    }
 }
 

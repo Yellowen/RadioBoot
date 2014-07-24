@@ -1,4 +1,6 @@
 en:
+  signin: "Sign In With"
+  github: "Github"
   not_valid: "Your email is not valid"
   failed_to_add: "Failed to add your address please try again."
   already_exists: "You already subscribed ;)"

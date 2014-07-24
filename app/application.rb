@@ -90,6 +90,9 @@ class RadioApp < Sinatra::Application
     erb :'faq.html'
   end
 
+  get '/signin/' do
+    erb :'signin.html'
+  end
 
   post '/subscribe' do
     content_type :json
