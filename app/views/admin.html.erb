@@ -1,0 +1,33 @@
+<section class="admin section blue">
+
+<div class="ui two page stackable column fluid grid">
+
+  <div class="six wide column">
+      <form class="ui form  segment">
+        <div class="field">
+          <input type="text" name="title" value="" placeholder="<%= t(:title) %> . . ."/>
+        </div>
+        <div class="field">
+          <input type="text" name="episode" value="" placeholder="<%= t(:episode) %> . . ."/>
+        </div>
+        <div class="field">
+          <input type="text" name="mp3_url" value="" placeholder="<%= t(:mp3url) %>"/>
+        </div>
+        <div class="field">
+          <input type="text" name="ogg_url" value="" placeholder="<%= t(:oggurl) %>"/>
+        </div>
+        <div class="field">
+          <button class="ui big green left labeled icon button"><i class="save icon"></i> <%= t(:publish) %></button>
+        </div>
+      </form>
+      <button class="ui fluid red left labeled icon big button"><i class="off icon"></i> <%= t(:signout) %></button>
+    </div>
+
+  <div class="ten wide column">
+    <div class="ui segment"></div>
+    <div class="ui segment"></div>
+
+  </div>
+</div>
+
+</section>

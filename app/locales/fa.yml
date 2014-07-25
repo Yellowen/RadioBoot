@@ -1,5 +1,12 @@
 fa:
+  title: "عنوان"
+  episode: "شماره"
+  mp3url: "آدرس فایل MP3"
+  oggurl: "آدرس فایل Ogg"
+  signout: "خروج"
+
   access_denied: "دسترسی امکانپذیر نیست."
+  publish: "انتشار"
   signin: "ورود با "
   github: "گیت هاب"
   not_valid: "ایمیلت درست نیست."

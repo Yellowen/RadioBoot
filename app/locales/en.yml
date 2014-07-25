@@ -1,6 +1,12 @@
 en:
+  title: "Title"
+  episode: "Episode"
+  mp3url: "Mp3 file url"
+  oggurl: "Ogg file url"
+  signout: "Signout"
   access_denied: "Access Denied"
   signin: "Sign In With"
+  publish: "Publish"
   github: "Github"
   not_valid: "Your email is not valid"
   failed_to_add: "Failed to add your address please try again."

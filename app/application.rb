@@ -78,11 +78,9 @@ class RadioApp < Sinatra::Application
     end
 
     def admin?
-      if session[:google]
-        settings.admins.values.include? user
-      else
-        settings.admins.keys.include? user
-      end
+      return true if settings.admins.values.include? user
+      return true if settings.admins.keys.include? user
+      false
     end
 
     def user
@@ -137,9 +135,9 @@ class RadioApp < Sinatra::Application
   end
 
   get '/admin/' do
-    return redirect to('/signin/?next=/admin/') unless signed_in?
-    return erb :'403.html' #unless admin?
 
+    return redirect to('/signin/?next=/admin/') unless signed_in?
+    return erb :'403.html' unless admin?
     erb :'admin.html'
   end
 
