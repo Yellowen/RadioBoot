@@ -77,9 +77,30 @@
       </div>
     </div>
     <% end %>
-    <div class="ui segment">
-
-    </div>
+    <table class="ui large table segment">
+      <thead>
+          <tr>
+            <th></th>
+            <th><%= t(:title) %></th>
+            <th><%= t(:episode) %></th>
+            <th><%= t(:mp3_url) %></th>
+            <th><%= t(:ogg_url) %></th>
+            <th><%= t(:downloads) %></th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @episodes.each do |ep| %>
+          <tr>
+            <td></td>
+            <td><%= ep.title %></td>
+            <td><%= ep.episode_number %></td>
+            <td><a href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
+            <td><a href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
+            <td><%= ep.downloads %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
     <div class="ui segment"></div>
 
   </div>

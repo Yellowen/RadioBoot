@@ -53,7 +53,7 @@ fa:
   become_sponsor: به جمع حامیان بپیوندید
   rss: "آر اس اس"
   close: "بستن"
-
+  downloads: "دانلودها"
   mongoid:
     errors:
       models:

@@ -159,6 +159,7 @@ class RadioApp < Sinatra::Application
     end
 
     @episode ||= Episode.new
+    @episodes = Episodes.all
     erb :'admin.html'
   end
 
