@@ -4,7 +4,7 @@
 
   <div class="six wide column">
       <form class="ui form attached fluid segment" action="/admin/save" method="POST">
-        <% if !@episode.id.nil? %>%><input type="hidden" name="id" value="<%= @episode.id %>" /><% end %>
+        <% if !@episode.id.nil? %><input type="hidden" name="id" value="<%= @episode.id %>" /><% end %>
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:title) %> field">
           <div class="ui icon input">
             <input type="text" name="title" value="<%= @episode.title %>" placeholder="<%= t(:title) %> . . ."/>

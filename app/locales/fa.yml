@@ -1,4 +1,5 @@
 fa:
+  admin: "مدیریت"
   delete_success: "ایتم با موفقیت حذف شد."
   item_notfound: "ایتمی با این مشخصات یافت نشد."
   remove: "حذف"

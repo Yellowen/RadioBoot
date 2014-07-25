@@ -131,6 +131,7 @@ class RadioApp < Sinatra::Application
   end
 
   get '/archive/' do
+    @episodes = Episode.all
     erb :'archive.html'
   end
 
@@ -204,9 +205,9 @@ class RadioApp < Sinatra::Application
     return redirect to('/signin/?next=/admin/') unless signed_in?
     return erb :'403.html' unless admin?
 
-    if params.include? "id"
+    begin
       @episode = Episode.find(params[:id])
-    else
+    rescue Mongoid::Errors::DocumentNotFound
       @episode = Episode.new
     end
 

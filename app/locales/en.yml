@@ -1,4 +1,5 @@
 en:
+  admin: "Admin"
   episode_saved: "Episode saved successfully."
   episode_failed: "Transaction failed. Please try again."
   fix_form: 'Please fill the form correctly.'

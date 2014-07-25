@@ -32,7 +32,7 @@
 
     <div class="ui mobile only thin left sidebar floating vertical menu">
       <div class="item"><a href="#listen"><%= t(:last_episode) %></a></div>
-      <div class="item"><a href="/archive"><%= t(:archive) %></a></div>
+      <div class="item"><a href="/archive/"><%= t(:archive) %></a></div>
       <!-- <div class="item"><a href="/faq"><%= t(:faq) %></a></div>-->
       <div class="item"><a href="http://twitter.com/radioboot"><i class="twitter icon"></i> <%= t(:twitter) %></a></div>
       <div class="item"><a href="http://www.facebook.com/radioboot"><i class="facebook squere icon"></i> <%= t(:facebook) %></a></div>
@@ -49,7 +49,16 @@
           <div class="right menu">
 
             <a href="#listen" class="item"><%= t(:last_episode) %></a>
-            <a href="/archive" class="item"><%= t(:archive) %></a>
+            <a href="/archive/" class="item"><%= t(:archive) %></a>
+            <% if signed_in? %>
+              <% if admin? %>
+                <a href="/admin/" class="item"><%= t(:admin) %></a>
+              <% else %>
+                <a href="/signout/" class="item"><%= t(:signout) %></a>
+              <% end %>
+            <% else %>
+              <a href="/signin/" class="item"><%= t(:signin) %></a>
+            <% end %>
             <!-- <a href="/faq" class="item"><%= t(:faq) %></a>-->
 
             <div class="ui dropdown item">
