@@ -4,7 +4,7 @@
 
   <div class="six wide column">
       <form class="ui form attached fluid segment" action="/admin/save" method="POST">
-        <input type="hidden" name="id" value="<%= @episode.id %>" />
+        <% if !@episode.id.nil? %>%><input type="hidden" name="id" value="<%= @episode.id %>" /><% end %>
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:title) %> field">
           <div class="ui icon input">
             <input type="text" name="title" value="<%= @episode.title %>" placeholder="<%= t(:title) %> . . ."/>
@@ -98,7 +98,7 @@
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><div class="ui teal label"><%= ep.downloads %></div></td>
-            <div class="hidden"><%= ep.tags.join(",") %></div>
+            <div class="hidden" style="display: none;"><%= ep.tags.join(",") %></div>
           </tr>
         <% end %>
       </tbody>

@@ -124,7 +124,10 @@ class RadioApp < Sinatra::Application
       @locale = 'fa'
       I18n.locale = 'fa'
     end
+
+    @last_episode = Episode.last
     erb :'index.html'
+
   end
 
   get '/archive/' do
@@ -201,7 +204,7 @@ class RadioApp < Sinatra::Application
     return redirect to('/signin/?next=/admin/') unless signed_in?
     return erb :'403.html' unless admin?
 
-    if params[:id]
+    if params.include? "id"
       @episode = Episode.find(params[:id])
     else
       @episode = Episode.new

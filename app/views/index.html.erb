@@ -60,8 +60,8 @@
     <div class="row">
       <div class="center aligned column">
         <div class="playercontainer">
-        <h2>#۲۳ <span>مقدمه</span></h2>
-        <audio class="audioplayer" src="http://traffic.libsyn.com/rubyrogues/RR165SystemsProgramming.mp3"></audio>
+        <h2>#<%= @last_episode.episode_number %> <span><%= @last_episode.title %></span></h2>
+        <audio class="audioplayer" src="<%= @last_episode.ogg_url %>"></audio>
         </div>
       </div>
     </div>
