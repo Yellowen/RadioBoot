@@ -77,15 +77,15 @@
       </div>
     </div>
     <% end %>
-    <table class="ui large table segment">
+    <table class="ui small table segment">
       <thead>
           <tr>
-            <th></th>
+            <th><div class="field"><input type="checkbox" name="all" /></div></th>
             <th><%= t(:title) %></th>
             <th><%= t(:episode) %></th>
-            <th><%= t(:mp3_url) %></th>
-            <th><%= t(:ogg_url) %></th>
-            <th><%= t(:downloads) %></th>
+            <th style="text-align: center">MP3</th>
+            <th style="text-align: center">OGG</th>
+            <th style="text-align: center"><%= t(:downloads) %></th>
           </tr>
       </thead>
       <tbody>
@@ -94,12 +94,19 @@
             <td></td>
             <td><%= ep.title %></td>
             <td><%= ep.episode_number %></td>
-            <td><a href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
-            <td><a href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
-            <td><%= ep.downloads %></td>
+            <td style="text-align: center"><a class="ui icon link" href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
+            <td style="text-align: center"><a class="ui icon link" href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
+            <td style="text-align: center"><%= ep.downloads %></td>
           </tr>
         <% end %>
       </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="6">
+            <div class="ui orange labeled icon button"><i class="remove icon"></i><%= t(:remove) %></div>
+          </th>
+        </tr>
+      </tfoot>
     </table>
     <div class="ui segment"></div>
 

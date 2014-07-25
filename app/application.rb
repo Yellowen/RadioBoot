@@ -159,7 +159,7 @@ class RadioApp < Sinatra::Application
     end
 
     @episode ||= Episode.new
-    @episodes = Episodes.all
+    @episodes = Episode.all
     erb :'admin.html'
   end
 

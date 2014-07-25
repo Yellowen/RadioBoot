@@ -43,6 +43,7 @@ en:
   become_sponsor: Become a sponsore
   close: "Close"
   downloads: "Downloads"
+  remove: "Remove"
 
   mongoid:
     errors:
