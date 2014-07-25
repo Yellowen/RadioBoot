@@ -44,6 +44,8 @@ en:
   close: "Close"
   downloads: "Downloads"
   remove: "Remove"
+  delete_success: "Item removed successfully."
+  item_notfound: "No item found."
 
   mongoid:
     errors:

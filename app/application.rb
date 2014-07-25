@@ -177,6 +177,21 @@ class RadioApp < Sinatra::Application
     redirect to('/admin/')
   end
 
+  get '/admin/:id/remove' do
+    return redirect to('/signin/?next=/admin/') unless signed_in?
+    return erb :'403.html' unless admin?
+
+    begin
+      ep = Episode.find(params[:id])
+      ep.destroy
+      session[:flash] = {type: "success", msg: t(:delete_success)}
+    rescue Mongoid::Errors::DocumentNotFound
+      session[:flash] = {type: "error", msg: t(:item_notfound)}
+    end
+
+    redirect to('/admin/')
+  end
+
   post '/admin/save' do
     return redirect to('/signin/?next=/admin/') unless signed_in?
     return erb :'403.html' unless admin?
