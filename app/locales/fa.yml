@@ -1,9 +1,14 @@
 fa:
+  tags: "تگ ها (جدا شده با کاما)"
   title: "عنوان"
   episode: "شماره"
   mp3url: "آدرس فایل MP3"
   oggurl: "آدرس فایل Ogg"
   signout: "خروج"
+
+  episode_saved: "تراکنش با موفقیت انجام شد"
+  episode_failed: "ذخیره با خطا مواجه شد. دوباره تلاش کنید"
+  fix_form: 'لطفا فرم را بصورت صحیح پر کنید'
 
   access_denied: "دسترسی امکانپذیر نیست."
   publish: "انتشار"
@@ -48,3 +53,17 @@ fa:
   become_sponsor: به جمع حامیان بپیوندید
   rss: "آر اس اس"
   close: "بستن"
+
+  mongoid:
+    errors:
+      models:
+        episode:
+          attributes:
+            title:
+              blank: "پر کردن عنوان اجباری است"
+            episode_number:
+              blank: "پر کردن شماره اجباری است"
+            mp3_url:
+              blank: "پر کردن آدرس فایل MP3 اجباری است"
+            ogg_url:
+              blank: "پر کردن آدرس فایل OGG اجباری است"

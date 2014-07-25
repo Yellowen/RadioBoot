@@ -12,6 +12,7 @@ require 'omniauth-facebook'
 require 'omniauth-google-oauth2'
 
 require_relative './lib/mailgun'
+require_relative './models/episode'
 
 # Main Sinatra application class
 class RadioApp < Sinatra::Application
@@ -89,6 +90,7 @@ class RadioApp < Sinatra::Application
     def user
       session[:nickname]
     end
+
   end
 
   # This section runs before any action with /:locale/ url
@@ -138,10 +140,47 @@ class RadioApp < Sinatra::Application
   end
 
   get '/admin/' do
-
     return redirect to('/signin/?next=/admin/') unless signed_in?
     return erb :'403.html' unless admin?
+
+    if session[:flash]
+      @flash = session[:flash]
+      session[:flash] = nil
+    end
+
+    if session[:errors]
+      @errors = session[:errors]
+      session[:errors] = nil
+    end
+
+    if session[:episode]
+      @episode = session[:episode]
+      session[:episode] = nil
+    end
+
+    puts ">>>>>>>>>> " , @episode
+    @episode ||= Episode.new
     erb :'admin.html'
+  end
+
+  post '/admin/save' do
+    return redirect to('/signin/?next=/admin/') unless signed_in?
+    return erb :'403.html' unless admin?
+
+    @episode = Episode.new(title: params[:title],
+                           episode_number: params[:episode],
+                           mp3_url: params[:mp3_url],
+                           ogg_url: params[:ogg_url],
+                           tags: params[:tags].split(','))
+    if @episode.save
+      session[:flash] = {type: 'success', msg: t(:episode_saved)}
+      redirect to('/admin/')
+    else
+      session[:flash] = {type: 'error', msg: t(:episode_failed)}
+      session[:errors] = @episode.errors
+      session[:episode] = @episode
+      redirect to('/admin/')
+    end
   end
 
   post '/subscribe' do

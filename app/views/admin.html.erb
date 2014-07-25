@@ -3,27 +3,66 @@
 <div class="ui two page stackable column fluid grid">
 
   <div class="six wide column">
-      <form class="ui form  segment">
-        <div class="field">
-          <input type="text" name="title" value="" placeholder="<%= t(:title) %> . . ."/>
+      <form class="ui form attached fluid segment" action="/admin/save" method="POST">
+        <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:title) %> field">
+          <input type="text" name="title" value="<%= @episode.title %>" placeholder="<%= t(:title) %> . . ."/>
+          <% if !@errors.nil? && @errors.messages.include?(:title) %>
+          <div class="ui red pointing above fluid ui label"><%= @errors['title'].first %></div>
+          <% end %>
         </div>
-        <div class="field">
+
+        <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:episode_number) %> field">
           <input type="text" name="episode" value="" placeholder="<%= t(:episode) %> . . ."/>
+          <% if !@errors.nil? && @errors.messages.include?(:episode_number) %>
+          <div class="ui red pointing above fluid ui label"><%= @errors['episode_number'].first %></div>
+          <% end %>
         </div>
-        <div class="field">
+
+        <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?('mp3_url'.to_sym) %> field">
           <input type="text" name="mp3_url" value="" placeholder="<%= t(:mp3url) %>"/>
+          <% if !@errors.nil? && @errors.messages.include?('mp3_url'.to_sym) %>
+          <div class="ui red pointing above fluid ui label"><%= @errors['mp3_url'].first %></div>
+          <% end %>
         </div>
-        <div class="field">
+
+        <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?('ogg_url'.to_sym) %> field">
           <input type="text" name="ogg_url" value="" placeholder="<%= t(:oggurl) %>"/>
+          <% if !@errors.nil? && @errors.messages.include?('ogg_url'.to_sym) %>
+          <div class="ui red pointing above fluid ui label"><%= @errors['ogg_url'].first %></div>
+          <% end %>
         </div>
+
+        <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:tags) %> field">
+          <input type="text" name="tags" value="" placeholder="<%= t(:tags) %>"/>
+          <% if !@errors.nil? && @errors.messages.include?(:tags) %>
+          <div class="ui red pointing above fluid ui label"><%= @errors['tags'].first %></div>
+          <% end %>
+        </div>
+
         <div class="field">
-          <button class="ui big green left labeled icon button"><i class="save icon"></i> <%= t(:publish) %></button>
+          <button onclick="$('form').submit()' id="#savebtn" class="ui big fluid green left labeled icon button"><i class="save icon"></i> <%= t(:publish) %></button>
         </div>
+
       </form>
-      <button class="ui fluid red left labeled icon big button"><i class="off icon"></i> <%= t(:signout) %></button>
+      <% unless @errors.nil? %>
+        <div class="ui bottom attached error message">
+          <i class="icon help"></i><%= t(:fix_form) %>
+        </div>
+      <% end %>
+      <br />
+      <a href="/signout/" class="ui fluid red left labeled icon big button"><i class="off icon"></i> <%= t(:signout) %></a>
     </div>
 
+
   <div class="ten wide column">
+
+    <% if defined? @flash and !@flash.nil? %>
+    <div class="ui <%= @flash[:type] %> message">
+      <div class="header">
+        <%= @flash[:msg] %>
+      </div>
+    </div>
+    <% end %>
     <div class="ui segment"></div>
     <div class="ui segment"></div>
 

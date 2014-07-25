@@ -17,6 +17,10 @@ function show_msg(id) {
 }
 
 $(function(){
+    $(".ui.message").on('click', function(event){
+        $(this).fadeOut();
+    });
+
     $("#subscribe").on('click', function(event){
         var email = $('#email').val();
         $(this).find('span')

@@ -4,10 +4,7 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'erubis'
 gem 'rake'
 gem 'thin'
-
-gem 'bourbon'
-gem 'bitters'
-gem 'neat'
+gem 'pry'
 
 
 #gem 'sinatra-assetpack', :require => 'sinatra/assetpack'

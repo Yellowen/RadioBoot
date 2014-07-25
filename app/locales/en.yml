@@ -1,4 +1,5 @@
 en:
+  tags: "Tags (comma separated)"
   title: "Title"
   episode: "Episode"
   mp3url: "Mp3 file url"
