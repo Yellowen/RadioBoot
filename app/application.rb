@@ -36,6 +36,7 @@ class RadioApp < Sinatra::Application
   # Enabling features
   enable :sessions
   enable :logging
+  set :session_secret, 'TODO'
 
   register Sinatra::AssetPipeline
 
@@ -138,6 +139,11 @@ class RadioApp < Sinatra::Application
     session[:next] = params[:next]
     erb :'signin.html'
   end
+  get '/signout/' do
+    session.clear
+    redirect to('/')
+  end
+
 
   get '/admin/' do
     return redirect to('/signin/?next=/admin/') unless signed_in?
@@ -163,24 +169,39 @@ class RadioApp < Sinatra::Application
     erb :'admin.html'
   end
 
+  get '/admin/:id/edit' do
+    return redirect to('/signin/?next=/admin/') unless signed_in?
+    return erb :'403.html' unless admin?
+
+    session[:episode] = Episode.find(params[:id])
+    redirect to('/admin/')
+  end
+
   post '/admin/save' do
     return redirect to('/signin/?next=/admin/') unless signed_in?
     return erb :'403.html' unless admin?
 
-    @episode = Episode.new(title: params[:title],
-                           episode_number: params[:episode],
-                           mp3_url: params[:mp3_url],
-                           ogg_url: params[:ogg_url],
-                           tags: params[:tags].split(','))
+    if params[:id]
+      @episode = Episode.find(params[:id])
+    else
+      @episode = Episode.new
+    end
+
+    @episode.title = params[:title]
+    @episode.episode_number = params[:episode]
+    @episode.mp3_url = params[:mp3_url]
+    @episode.ogg_url = params[:ogg_url]
+    @episode.tags = params[:tags].split(',')
+
     if @episode.save
       session[:flash] = {type: 'success', msg: t(:episode_saved)}
-      redirect to('/admin/')
     else
       session[:flash] = {type: 'error', msg: t(:episode_failed)}
       session[:errors] = @episode.errors
       session[:episode] = @episode
-      redirect to('/admin/')
     end
+
+    redirect to('/admin/')
   end
 
   post '/subscribe' do

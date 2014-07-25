@@ -17,7 +17,7 @@
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:episode_number) %> field">
           <div class="ui icon input">
-            <input type="text" name="episode" value="" placeholder="<%= t(:episode) %> . . ."/>
+            <input type="text" name="episode" value="<%= @episode.episode_number %>" placeholder="<%= t(:episode) %> . . ."/>
               <i class="asterisk icon"></i>
           </div>
 
@@ -28,7 +28,7 @@
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?('mp3_url'.to_sym) %> field">
           <div class="ui icon input">
-            <input type="text" name="mp3_url" value="" placeholder="<%= t(:mp3url) %>"/>
+            <input type="text" name="mp3_url" value="<%= @episode.mp3_url %>" placeholder="<%= t(:mp3url) %>"/>
             <i class="asterisk icon"></i>
           </div>
           <% if !@errors.nil? && @errors.messages.include?('mp3_url'.to_sym) %>
@@ -38,7 +38,7 @@
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?('ogg_url'.to_sym) %> field">
           <div class="ui icon input">
-            <input type="text" name="ogg_url" value="" placeholder="<%= t(:oggurl) %>"/>
+            <input type="text" name="ogg_url" value="<%= @episode.ogg_url %>" placeholder="<%= t(:oggurl) %>"/>
               <i class="asterisk icon"></i>
           </div>
 
@@ -48,7 +48,7 @@
         </div>
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:tags) %> field">
-          <input type="text" name="tags" value="" placeholder="<%= t(:tags) %>"/>
+          <input type="text" name="tags" value="<%= @episode.tags.join(',') unless @episode.tags.nil? %>" placeholder="<%= t(:tags) %>"/>
           <% if !@errors.nil? && @errors.messages.include?(:tags) %>
           <div class="ui red pointing above fluid ui label"><%= @errors['tags'].first %></div>
           <% end %>
