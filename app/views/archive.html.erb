@@ -1,7 +1,29 @@
-<section class="blue section">
+<section class="gray section" style="padding-top: 10em;">
   <div class="ui stackable page grid">
+    <div class="center aligned row"><div class="column"><h1><%= t(:archive) %></h1></div></div>
+    <div class="ui horizontal divider">
+      <i class="archive icon"></i>
+    </div>
     <% @episodes.each do |ep| %>
-      <div class="column"><a href="/podcasts/<% ep.id %>"><div class="ui segment"><h2><%= ep.title %></h2></div></a></div>
+      <div class="row">
+      <div class="column">
+        <a href="/podcasts/<% ep.id %>">
+          <div class="ui segment archive">
+            <div class="ui three column divided grid">
+              <div class="one wide column">
+                <a href="<%= ep.mp3_url %>">MP3</a>
+              </div>
+              <div class="one wide column">
+                <a href="<%= ep.ogg_url %>">OGG</a>
+              </div>
+              <div class="fourteen wide column">
+                <p><%= ep.title %></p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+</div>
     <% end %>
   </div>
 </section>
