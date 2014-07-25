@@ -94,7 +94,7 @@
           <tr id="<%= ep.id %>">
             <td><a data-url="/admin/<%= ep.id %>/remove" href="#" class="removebtn ui orange icon link"><i class=" orange remove icon"></i></a></td>
             <td><a href="/admin/<%= ep.id %>/edit" class="ui link editbtn" data-id="<%= ep.id %>"><i class="edit icon"></i> <%= ep.title %></a></td>
-            <td><%= ep.episode_number %></td>
+            <td>#<%= ep.episode_number %></td>
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><div class="ui teal label"><%= ep.downloads %></div></td>
