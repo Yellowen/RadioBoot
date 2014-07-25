@@ -158,7 +158,6 @@ class RadioApp < Sinatra::Application
       session[:episode] = nil
     end
 
-    puts ">>>>>>>>>> " , @episode
     @episode ||= Episode.new
     erb :'admin.html'
   end

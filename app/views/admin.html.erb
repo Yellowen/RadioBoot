@@ -5,28 +5,42 @@
   <div class="six wide column">
       <form class="ui form attached fluid segment" action="/admin/save" method="POST">
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:title) %> field">
-          <input type="text" name="title" value="<%= @episode.title %>" placeholder="<%= t(:title) %> . . ."/>
+          <div class="ui icon input">
+            <input type="text" name="title" value="<%= @episode.title %>" placeholder="<%= t(:title) %> . . ."/>
+            <i class="asterisk icon"></i>
+          </div>
           <% if !@errors.nil? && @errors.messages.include?(:title) %>
-          <div class="ui red pointing above fluid ui label"><%= @errors['title'].first %></div>
-          <% end %>
+              <div class="ui red pointing above fluid ui label"><%= @errors['title'].first %></div>
+            <% end %>
         </div>
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:episode_number) %> field">
-          <input type="text" name="episode" value="" placeholder="<%= t(:episode) %> . . ."/>
+          <div class="ui icon input">
+            <input type="text" name="episode" value="" placeholder="<%= t(:episode) %> . . ."/>
+              <i class="asterisk icon"></i>
+          </div>
+
           <% if !@errors.nil? && @errors.messages.include?(:episode_number) %>
-          <div class="ui red pointing above fluid ui label"><%= @errors['episode_number'].first %></div>
+            <div class="ui red pointing above fluid ui label"><%= @errors['episode_number'].first %></div>
           <% end %>
         </div>
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?('mp3_url'.to_sym) %> field">
-          <input type="text" name="mp3_url" value="" placeholder="<%= t(:mp3url) %>"/>
+          <div class="ui icon input">
+            <input type="text" name="mp3_url" value="" placeholder="<%= t(:mp3url) %>"/>
+            <i class="asterisk icon"></i>
+          </div>
           <% if !@errors.nil? && @errors.messages.include?('mp3_url'.to_sym) %>
           <div class="ui red pointing above fluid ui label"><%= @errors['mp3_url'].first %></div>
           <% end %>
         </div>
 
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?('ogg_url'.to_sym) %> field">
-          <input type="text" name="ogg_url" value="" placeholder="<%= t(:oggurl) %>"/>
+          <div class="ui icon input">
+            <input type="text" name="ogg_url" value="" placeholder="<%= t(:oggurl) %>"/>
+              <i class="asterisk icon"></i>
+          </div>
+
           <% if !@errors.nil? && @errors.messages.include?('ogg_url'.to_sym) %>
           <div class="ui red pointing above fluid ui label"><%= @errors['ogg_url'].first %></div>
           <% end %>
@@ -63,7 +77,9 @@
       </div>
     </div>
     <% end %>
-    <div class="ui segment"></div>
+    <div class="ui segment">
+
+    </div>
     <div class="ui segment"></div>
 
   </div>
