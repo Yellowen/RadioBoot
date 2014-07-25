@@ -2,6 +2,7 @@
 //= require_tree ./lib
 //= require_tree ./semantic
 //= require_self
+//= require admin
 
 function show_error(id) {
     $("#subscribe").find('span').transition('remove looping');
