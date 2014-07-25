@@ -1,4 +1,6 @@
 require 'json'
+
+require 'mongoid'
 require 'sinatra/base'
 require 'sinatra/asset_pipeline'
 require 'i18n'
@@ -54,7 +56,8 @@ class RadioApp < Sinatra::Application
       provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
 
     end
-
+    @app_root = File.expand_path(File.dirname(__FILE__))
+    Mongoid.load!(File.join(@app_root, './config/mongoid.yml'))
   end
 
   # Template helpers
