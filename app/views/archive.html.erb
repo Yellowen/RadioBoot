@@ -6,24 +6,30 @@
     </div>
     <% @episodes.each do |ep| %>
       <div class="row">
-      <div class="column">
-        <a href="/podcasts/<% ep.id %>">
+        <div class="column">
+
           <div class="ui segment archive">
-            <div class="ui three column divided grid">
+            <div class="ui four column divided grid">
               <div class="one wide column">
                 <a href="<%= ep.mp3_url %>">MP3</a>
               </div>
               <div class="one wide column">
                 <a href="<%= ep.ogg_url %>">OGG</a>
               </div>
-              <div class="fourteen wide column">
-                <p><%= ep.title %></p>
+
+              <div class="two center aligned wide column">
+                <%= ep.published_at.strftime('%Y-%d-%m') %>
               </div>
+              <div dir="ltr" class="twelve wide column">
+                <a href="/podcasts/<%= ep.id %>/">
+                  <p><%= ep.title %></p>
+                </a>
+              </div>
+
             </div>
           </div>
-        </a>
+        </div>
       </div>
-</div>
     <% end %>
   </div>
 </section>

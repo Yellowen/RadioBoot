@@ -118,6 +118,13 @@ class RadioApp < Sinatra::Application
   end
 
   # Actions
+
+  get '/podcasts/:id/' do
+    @episode = Episode.where(id: params[:id]).first
+    return erb :'404.html' if @episode.nil?
+    erb :'episode.html'
+  end
+
   get '/' do
     # use the views/index.erb file
     unless defined? @locale
@@ -143,6 +150,7 @@ class RadioApp < Sinatra::Application
     session[:next] = params[:next]
     erb :'signin.html'
   end
+
   get '/signout/' do
     session.clear
     redirect to('/')

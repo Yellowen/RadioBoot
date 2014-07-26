@@ -1,0 +1,37 @@
+<section class="blue player section">
+  <div class="ui page stackable grid">
+    <div class="row">
+      <div class="center aligned column">
+        <div class="playercontainer">
+            <h2>#<%= @episode.episode_number %> <span><%= @episode.title %></span></h2>
+            <audio class="audioplayer" src="<%= @episode.ogg_url %>"></audio>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="description">
+          <div class="ui two column stackable grid">
+            <div class="four wide column">
+              <div class="ui vertical pointing menu">
+                <a class="active item">
+                  Home
+                </a>
+                <a class="item">
+                  Messages
+                </a>
+                <a class="item">
+                  Friends
+                </a>
+              </div>
+            </div>
+            <div class="twelve wide column">
+              <div class="ui segment titles">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
