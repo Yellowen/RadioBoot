@@ -13,6 +13,8 @@ require 'omniauth-facebook'
 require 'omniauth-google-oauth2'
 
 require_relative './lib/mailgun'
+require_relative './lib/admin'
+
 require_relative './models/episode'
 
 # Main Sinatra application class
@@ -30,7 +32,7 @@ class RadioApp < Sinatra::Application
   set :mailinglist, 'newsletter@radioboot.com'
   set :mailgun_api_key, ENV['MAILGUN_API_KEY']
 
-  set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gnu.org'}
+  #set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gnu.org'}
 
   @title = 'RadioBoot'
 
@@ -41,7 +43,7 @@ class RadioApp < Sinatra::Application
 
   register Sinatra::AssetPipeline
 
-
+  include AdminPanel
   # Extra modules
   include Mailgun
 
@@ -112,15 +114,6 @@ class RadioApp < Sinatra::Application
     end
   end
 
-  before '/admin/' do
-    # we do not want to redirect to twitter when the path info starts
-    # with /auth/
-    pass if request.path_info =~ /^\/auth\//
-
-    # /auth/twitter is captured by omniauth:
-    # when the path info matches /auth/twitter, omniauth will redirect to twitter
-    redirect to('/signin/') unless signed_in?
-  end
 
   # Actions
 
@@ -162,84 +155,6 @@ class RadioApp < Sinatra::Application
   end
 
 
-  get '/admin/' do
-    return redirect to('/signin/?next=/admin/') unless signed_in?
-    return erb :'403.html' unless admin?
-
-    if session[:flash]
-      @flash = session[:flash]
-      session[:flash] = nil
-    end
-
-    if session[:errors]
-      @errors = session[:errors]
-      session[:errors] = nil
-    end
-
-    if session[:episode]
-      @episode = session[:episode]
-      session[:episode] = nil
-    end
-
-    @episode ||= Episode.new
-    @episodes = Episode.all
-    erb :'admin.html'
-  end
-
-  get '/admin/:id/edit' do
-    return redirect to('/signin/?next=/admin/') unless signed_in?
-    return erb :'403.html' unless admin?
-
-    begin
-      session[:episode] = Episode.find(params[:id])
-    rescue Mongoid::Errors::DocumentNotFound
-      session[:flash] = {type: "error", msg: t(:item_notfound)}
-    end
-
-    redirect to('/admin/')
-  end
-
-  get '/admin/:id/remove' do
-    return redirect to('/signin/?next=/admin/') unless signed_in?
-    return erb :'403.html' unless admin?
-
-    begin
-      ep = Episode.find(params[:id])
-      ep.destroy
-      session[:flash] = {type: "success", msg: t(:delete_success)}
-    rescue Mongoid::Errors::DocumentNotFound
-      session[:flash] = {type: "error", msg: t(:item_notfound)}
-    end
-
-    redirect to('/admin/')
-  end
-
-  post '/admin/save' do
-    return redirect to('/signin/?next=/admin/') unless signed_in?
-    return erb :'403.html' unless admin?
-
-    begin
-      @episode = Episode.find(params[:id])
-    rescue Mongoid::Errors::DocumentNotFound
-      @episode = Episode.new
-    end
-
-    @episode.title = params[:title]
-    @episode.episode_number = params[:episode]
-    @episode.mp3_url = params[:mp3_url]
-    @episode.ogg_url = params[:ogg_url]
-    @episode.tags = params[:tags].split(',')
-
-    if @episode.save
-      session[:flash] = {type: 'success', msg: t(:episode_saved)}
-    else
-      session[:flash] = {type: 'error', msg: t(:episode_failed)}
-      session[:errors] = @episode.errors
-      session[:episode] = @episode
-    end
-
-    redirect to('/admin/')
-  end
 
   post '/subscribe' do
     content_type :json
