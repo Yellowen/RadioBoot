@@ -1,4 +1,6 @@
 en:
+  linkedin: "Linkedin"
+  share: "Share"
   admin: "Admin"
   episode_saved: "Episode saved successfully."
   episode_failed: "Transaction failed. Please try again."

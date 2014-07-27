@@ -106,13 +106,22 @@
                 <a class="item">
                   Friends
                 </a>
+
+
+                <div class="ui dropdown item">
+                  <%= t(:share) %> <i class="dropdown icon"></i>
+                  <div class="menu">
+                    <a href="https://twitter.com/intent/tweet?source=Radio_Boot&text=<%= url_encode(@episode.title) %>&url=<%= url_encode("http://www.radioboot.com/podcasts/#{@episode.id}") %>" class="item"><i class="large twitter icon"></i> <%= t(:twitter) %></a>
+                    <a href="http://www.facebook.com/sharer.php?u=<%= url_encode("http://www.radioboot.com/podcasts/#{@episode.id}") %>&t=<%= url_encode(@episode.title) %>" class="item"><i class="large facebook icon"></i> <%= t(:facebook) %></a>
+                    <a href="https://plus.google.com/share?text=<%= url_encode(@episode.title) %>&url=<%= url_encode("http://www.radioboot.com/podcasts/#{@episode.id}") %>" class="item"><i class="large google plus icon"></i> <%= t(:googleplus) %></a>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= url_encode("http://www.radioboot.com/podcasts/#{@episode.id}") %>&title=<%= url_encode(@episode.title) %>&source=<%= url_encode('http://www.radioboot.com') %>" class="item"><i class="large linkedin icon"></i> <%= t(:linkedin) %></a>
+
+                  </div>
+
+                </div>
+
               </div>
 
-              <div class="ui secondary center aligned menu">
-                <a href="#" class="item"><i class="large twitter icon"></i></a>
-                <a href="#" class="item"><i class="large facebook icon"></i></a>
-                <a href="#" class="item"><i class="large google plus icon"></i></a>
-              </div>
 
             </div>
 

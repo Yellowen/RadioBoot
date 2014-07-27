@@ -93,6 +93,10 @@ class RadioApp < Sinatra::Application
       session[:nickname]
     end
 
+    def url_encode(s)
+      CGI.escape(s)
+    end
+
   end
 
   # This section runs before any action with /:locale/ url
