@@ -2,6 +2,7 @@ require 'json'
 
 require 'mongoid'
 require 'sinatra/base'
+require 'sinatra/contrib'
 require 'sinatra/asset_pipeline'
 require 'i18n'
 require 'i18n/backend/fallbacks'

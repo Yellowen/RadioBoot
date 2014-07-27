@@ -8,6 +8,11 @@
     <link rel="icon" type="image/png" href="<%= image_path 'fav.png' %>" />
     <meta name="description" content="Radio Boot, A podcast for Free software lovers">
     <link rel="author" href="https://www.google.com/+RadioBoot"/>
+    <meta name="twitter:card" content="A Postcast about free software and technologies.">
+    <meta name="twitter:site" content="@radioboot">
+    <meta name="twitter:creator" content="@radioboot">
+
+    <%= yield_content :header %>
 
     <%= stylesheet_tag 'application_rtl' if @locale == "fa" %>
     <%= stylesheet_tag 'application_ltr' if @locale == "en" %>

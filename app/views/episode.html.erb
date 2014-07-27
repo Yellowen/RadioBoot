@@ -1,3 +1,27 @@
+<% content_for :header do %>
+  <% unless @episode.nil? %>
+    <meta name="twitter:title" content="<%= @episode.title %>">
+
+    <meta name="twitter:url" content="http://www.radioboot.com/podcasts/<%= @episode.id %>">
+    <meta name="twitter:description" content="RadioBoot Episode <%= @episode.episode_number %>  about <%= @episode.tags.join(",")  %>">
+    <meta name="twitter:image:src" content="http://www.radioboot.com<%= image_path('logo.png') %>">
+
+    <meta content="RadioBoot.com" property="og:site_name">
+    <meta content="<%= @episode.title %>" property="og:title">
+    <meta content="article" property="og:type">
+
+    <meta content="RadioBoot Episode <%= @episode.episode_number %>  about <%= @episode.tags.join(",")  %>" property="og:description">
+
+    <meta content="http://www.radioboot.com/podcasts/<%= @episode.id %>" property="og:url">
+    <meta content="<%= @episode.published_at %>" property="article:published_time">
+    <meta content="http://www.radioboot.com/" property="article:author">
+    <meta content="http://www.radioboot.com<%= image_path('logo.png') %>" property="og:image">
+
+    <meta content="<%= @episode.tags.join(',') %>" property="article:section">
+    <meta content="<%= @episode.tags.join(',') %>" property="article:tag">
+  <% end %>
+<% end %>
+
 <section class="blue player section">
   <div class="ui page stackable grid">
     <div class="row">
