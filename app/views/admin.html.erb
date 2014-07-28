@@ -2,7 +2,25 @@
 
 <div class="ui two page stackable column fluid grid">
 
-  <div class="six wide column">
+  <div class="five wide column">
+
+    <form class="ui form attached fluid segment" action="/admin/upload" method="POST" enctype="multipart/form-data" id="upload_form">
+      <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:data_file) %> field">
+        <div class="ui action input">
+          <input type="file"  name="data_file" value="" style="display: none" id="actual_field" />
+          <input type="text" value="" placeholder="<%= t(:data_file) %> . . ." id="upload_file" />
+          <div class="ui teal button"> <%= t(:choose) %></div>
+        </div>
+        <% if !@errors.nil? && @errors.messages.include?(:data_file) %>
+          <div class="ui red pointing above fluid ui label"> <%= @errors['data_file'].first %></div>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <button class="ui left labeled icon fluid black button"><i class="upload icon"></i><%= t(:upload) %></button>
+      </div>
+    </form>
+
       <form class="ui form attached fluid segment" action="/admin/save" method="POST">
         <% if !@episode.id.nil? %><input type="hidden" name="id" value="<%= @episode.id %>" /><% end %>
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:title) %> field">
@@ -69,7 +87,7 @@
     </div>
 
 
-  <div class="ten wide column">
+  <div class="eleven wide column">
 
     <% if defined? @flash and !@flash.nil? %>
     <div class="ui <%= @flash[:type] %> message">
@@ -81,12 +99,13 @@
     <table class="ui small table segment">
       <thead>
           <tr>
-            <th></th>
+            <th class="one wide"></th>
             <th><%= t(:title) %></th>
-            <th><%= t(:episode) %></th>
-            <th style="text-align: center">MP3</th>
-            <th style="text-align: center">OGG</th>
-            <th style="text-align: center"><%= t(:downloads) %></th>
+            <th class="one wide"><%= t(:episode) %></th>
+            <th style="text-align: center" class="one wide">MP3</th>
+            <th style="text-align: center" class="one wide">OGG</th>
+            <th style="text-align: center" class="one wide"><%= t(:downloads) %></th>
+            <th style="text-align: center" class="two wide"><%= t(:data_file) %></th>
           </tr>
       </thead>
       <tbody>
@@ -98,6 +117,7 @@
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><div class="ui teal label"><%= ep.downloads %></div></td>
+            <td style="text-align: center"><a data-id="<%= ep.id %>" class="upbutton"><i class="big upload icon"></i></a></td>
             <div class="hidden" style="display: none;"><%= ep.tags.join(",") %></div>
           </tr>
         <% end %>

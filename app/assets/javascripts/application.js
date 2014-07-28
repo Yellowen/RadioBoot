@@ -49,8 +49,6 @@ $(function(){
 
             })
             .fail(function(data){
-                console.log(data);
-                console.log('fail');
                 $(that).removeClass('loading');
                 $('#email').removeClass('disabled');
 
@@ -58,4 +56,24 @@ $(function(){
 
 
     });
+
+    $('video,audio').mediaelementplayer({
+        success: function (mediaElement, domObject) {
+
+            // add event listener
+            mediaElement.addEventListener('timeupdate', function(e) {
+
+                console.log('>>>>>>' + e);
+
+            }, false);
+        },
+    });
+
+    $(".ui.dropdown").dropdown();
+    //$(".ui.computer.sidebar").sidebar('attach events', '.toggle.button.computer');
+    $(".ui.sidebar").sidebar({overlay: true}).sidebar('attach events', '.toggle.button');
+    $("#upload_file").on('click', function(event){
+        $("#actual_field").click();
+    });
+
 });
