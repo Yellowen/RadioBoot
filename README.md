@@ -1,8 +1,8 @@
 RadioBoot Official website
 ==========================
 
-This is a very simple web application on top of **Sinatra** ruby web framework.
-
+A web application to manage and publish podcasts based on **Sinatra** web framework, tuned to use with
+**openshift**
 
 Running on OpenShift
 --------------------
