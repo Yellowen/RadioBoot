@@ -94,7 +94,17 @@ module AdminPanel
       redirect to('/admin/')
     end
 
-
+    base.post '/admin/upload' do
+      begin
+        data = JSON.parse(params[:json])
+        ep = Episode.find(params[:id])
+        ep.details = data
+        ep.save
+        JSON.generate({status: "0"})
+      rescue JSON::ParserError => e
+        JSON.generate({status: "1", msg: e})
+      end
+    end
 
 
   end

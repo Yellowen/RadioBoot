@@ -11,7 +11,7 @@ class Episode
   field :tags, type: Array
   field :published_at, type: DateTime, default: ->{ Date.today }
   field :downloads, type: Integer, default: 0
-  field :data_file, type: Hash, default: {}
+  field :details, type: Hash, default: {}
 
   index({ title: 1 }, { unique: true, background: true })
   index({ episode_number: 1 }, { background: true })

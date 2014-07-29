@@ -1,8 +1,6 @@
 function admin_show_msg(msg, klass){
-    $(".message > header").html(msg);
-    $(".message").addClass(klass);
-    $(".message").fadeIn().delay(4000).fadeOut();
-    $(".message").removeClass(klass);
+    $("#msg .header").html(msg);
+    $("#msg").addClass(klass).fadeIn().delay(4000).fadeOut().removeClass(klass);
 
 }
 
@@ -12,8 +10,8 @@ function admin_show_suc(){
 function admin_show_err(){
     admin_show_msg($("#error").html(), "error");
 }
-function admin_show_format_err(){
-    admin_show_msg($("#format").html(), "error");
+function admin_show_format_err(data){
+    admin_show_msg(data, "error");
 }
 
 $(function(){
@@ -58,29 +56,28 @@ $(function(){
             }
             reader.onloadend = (function(theFile) {
                 output = reader.result;
+                $.ajax({
+                    url: '/admin/upload',
+                    type: 'POST',
+                    data: {json: output, id: $("#drop_zone").data('id')}
+                })
+                    .done(function(data){
+                        data = JSON.parse(data);
+                        if (data.status == "0") {
+                            admin_show_suc();
+                            window.location.href = "/admin/";
+                        }
+                        else {
+                            admin_show_format_err(data.msg);
+                        }
+                    })
+                    .fail(function(data){
+                        admin_show_err();
+                    })
+
             });
             reader.readAsText(f);
         }
-
-        $.ajax({
-            url: '/admin/upload',
-            data: {json: output, id: $("#drop_zone").data('id')}
-        })
-            .done(function(data){
-                if (data.status == "0") {
-                    admin_show_suc();
-                    $("#upload_area").fadeOut();
-                }
-                else {
-                    admin_show_format_err();
-                }
-            })
-            .fail(function(data){
-                admin_show_err();
-            })
-            .always(function(){
-                $("#drop_zone").html(text);
-            });
 
     }
 

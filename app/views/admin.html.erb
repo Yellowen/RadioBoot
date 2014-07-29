@@ -84,13 +84,15 @@
 
   <div class="eleven wide column">
 
-    <% if defined? @flash and !@flash.nil? %>
-    <div class="ui <%= @flash[:type] %> message">
+    <div id="msg" class="ui <% if defined? @flash and !@flash.nil? %><%= @flash[:type] %><% else %>hide<% end %> message">
       <div class="header">
-        <%= @flash[:msg] %>
+        <% if defined? @flash and !@flash.nil? %>
+          <%= @flash[:msg] %>
+        <% end %>
+
       </div>
     </div>
-    <% end %>
+
     <table class="ui small table segment">
       <thead>
           <tr>
@@ -112,7 +114,7 @@
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.mp3_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><a class="ui icon link" href="<%= ep.ogg_url %>"><i class="external url icon"></i></a></td>
             <td style="text-align: center"><div class="ui teal label"><%= ep.downloads %></div></td>
-            <td style="text-align: center"><a data-id="<%= ep.id %>" class="upbutton"><i class="big upload icon"></i></a></td>
+            <td style="text-align: center"><% unless ep.details.empty? %><i class="large check icon"></i><% end %> <a data-id="<%= ep.id %>" class="upbutton"><i class="large upload icon"></i></a></td>
             <div class="hidden" style="display: none;"><%= ep.tags.join(",") %></div>
           </tr>
         <% end %>
