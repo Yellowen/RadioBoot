@@ -1,4 +1,7 @@
 en:
+  success: "Transaction finished successfully."
+  error: "Transaction failed. Try again."
+  format_error: "Data format was not right."
   upload: "Upload"
   choose: "Choose"
   data_file: "Data File"

@@ -4,22 +4,17 @@
 
   <div class="five wide column">
 
-    <form class="ui form attached fluid segment" action="/admin/upload" method="POST" enctype="multipart/form-data" id="upload_form">
-      <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:data_file) %> field">
-        <div class="ui action input">
-          <input type="file"  name="data_file" value="" style="display: none" id="actual_field" />
-          <input type="text" value="" placeholder="<%= t(:data_file) %> . . ." id="upload_file" />
-          <div class="ui teal button"> <%= t(:choose) %></div>
-        </div>
-        <% if !@errors.nil? && @errors.messages.include?(:data_file) %>
-          <div class="ui red pointing above fluid ui label"> <%= @errors['data_file'].first %></div>
-        <% end %>
+    <div class="ui form attached fluid segment hide" id="upload_area">
+      <div class="field">
+          <div class="drop zone fluid" id="drop_zone">
+            <i class="file icon"></i> Drop file here
+          </div>
       </div>
 
       <div class="field">
-        <button class="ui left labeled icon fluid black button"><i class="upload icon"></i><%= t(:upload) %></button>
+        <button class="ui left labeled icon fluid black button" id="close_upload"><i class="remove icon"></i><%= t(:close) %></button>
       </div>
-    </form>
+    </div>
 
       <form class="ui form attached fluid segment" action="/admin/save" method="POST">
         <% if !@episode.id.nil? %><input type="hidden" name="id" value="<%= @episode.id %>" /><% end %>
@@ -131,3 +126,8 @@
 </div>
 
 </section>
+<div class="hidden">
+  <span id="suc"><%= t(:success) %></span>
+  <span id="error"><%= t(:error) %></span>
+  <span id="format"><%= t(:format_error) %></span>
+</div>
