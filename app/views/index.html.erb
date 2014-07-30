@@ -174,3 +174,11 @@
      </div>
   </div>
 </section>
+
+
+<% content_for :tmp do %>
+  <% unless @last_episode.nil? %>
+    <% require 'json' %>
+    <%= JSON.generate(@last_episode.details) %>
+  <% end %>
+<% end %>
