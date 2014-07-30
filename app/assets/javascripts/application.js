@@ -77,3 +77,19 @@ $(function(){
     });
 
 });
+
+$(function(){
+    var details = JSON.parse($("#tmp").html());
+    var lang = $("html").attr('lang');
+
+    if ((details !== undefined) || (details != "")) {
+
+        var topics = details.topics.reverse();
+        $.each(topics, function(x){
+            var obj = details.topics[x];
+            $("#episode_menu").prepend("<a class='item' id='topic_" + obj.id + "'>" + obj[lang] + "</a>");
+        });
+
+
+    }
+});
