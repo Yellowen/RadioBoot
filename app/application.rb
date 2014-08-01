@@ -135,6 +135,17 @@ class RadioApp < Sinatra::Application
 
   end
 
+  get 'download/:type/:id/' do
+    begin
+      ep = Episode.find(params[:id])
+      ep.download += 1
+      ep.save
+      redirect to(ep.send(params.type.to_sym))
+    rescue Mongoid::Errors::DocumentNotFound
+      status 404
+    end
+  end
+
   get '/archive/' do
     @episodes = Episode.all
     erb :'archive.html'
