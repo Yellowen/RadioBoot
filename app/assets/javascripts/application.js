@@ -57,14 +57,14 @@ $(function(){
 
     });
 
+    var details = JSON.parse($("#tmp").html());
     $('video,audio').mediaelementplayer({
         success: function (mediaElement, domObject) {
 
             // add event listener
             mediaElement.addEventListener('timeupdate', function(e) {
-
-                console.log('>>>>>>' + e);
-
+                console.log(mediaElement.currentTime);
+                console.log(typeof(mediaElement.currentTime));
             }, false);
         },
     });
@@ -87,7 +87,8 @@ $(function(){
         var topics = details.topics.reverse();
         $.each(topics, function(x){
             var obj = details.topics[x];
-            $("#episode_menu").prepend("<a class='item' id='topic_" + obj.id + "'>" + obj[lang] + "</a>");
+            $("#episode_menu").prepend("<a class='item' id='topic_" + obj.id + "' data-id='" + obj.id + "'>" + obj[lang] + "</a>");
+
         });
 
 

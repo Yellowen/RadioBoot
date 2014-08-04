@@ -48,8 +48,6 @@ $(function(){
         for (var i = 0, f; f = files[i]; i++) {
             var reader = new FileReader();
 
-            console.log(f.type);
-            console.log(f.type.match("json*"));
             if (!f.type.match("json*")) {
                 alert("File format should be json.");
                 continue;

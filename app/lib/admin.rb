@@ -1,5 +1,4 @@
 #encoding: utf-8
-
 module AdminPanel
 
 
@@ -37,7 +36,7 @@ module AdminPanel
       end
 
       @episode ||= Episode.new
-      @episodes = Episode.all
+      @episodes = Episode.order_by('published_at DESC').all
       erb :'admin.html'
     end
 
@@ -84,6 +83,7 @@ module AdminPanel
       @episode.mp3_url = params[:mp3_url]
       @episode.ogg_url = params[:ogg_url]
       @episode.tags = params[:tags].split(',')
+      #@episode.publish_at = Date.today
 
       if @episode.save
         session[:flash] = {type: 'success', msg: t(:episode_saved)}
