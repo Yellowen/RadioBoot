@@ -18,10 +18,17 @@
 
       <form class="ui form attached fluid segment" action="/admin/save" method="POST">
         <% if !@episode.id.nil? %><input type="hidden" name="id" value="<%= @episode.id %>" /><% end %>
+
         <div class="<%= 'error' if !@errors.nil? && @errors.messages.include?(:title) %> field">
-          <div class="ui icon input">
+          <div class="ui icon action input">
+
             <input type="text" name="title" value="<%= @episode.title %>" placeholder="<%= t(:title) %> . . ."/>
-            <i class="asterisk icon"></i>
+            <div class="ui dropdown small purple button"><i class="dropdown icon"></i>
+              <span id='titlelang'><%= @locale %></span><div class="menu">
+              <div class="langitem item">FA</div>
+              <div class="langitem item">EN</div>
+            </div>
+            </div>
           </div>
           <% if !@errors.nil? && @errors.messages.include?(:title) %>
               <div class="ui red pointing above fluid ui label"><%= @errors['title'].first %></div>

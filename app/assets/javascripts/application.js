@@ -116,6 +116,10 @@ $(function(){
         $(this).fadeOut();
     });
 
+    $(".langitem").on('click', function(){
+        $("#titlelang").html($(this).html());
+    });
+
     $("#subscribe").on('click', function(event){
         var email = $('#email').val();
         $(this).find('span')
