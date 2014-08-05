@@ -101,6 +101,11 @@ class RadioApp < Sinatra::Application
 
   end
 
+
+  before do
+    I18n.locale = session[:local]
+  end
+
   # This section runs before any action with /:locale/ url
   before '/:locale/*' do
     if settings.locales.include? params[:locale]
@@ -112,8 +117,12 @@ class RadioApp < Sinatra::Application
       I18n.locale = @locale
       request.path_info = "/#{params[:locale]}/#{params[:splat][0]}"
     end
+    session[:locale] = @locale
   end
 
+  before do
+    @path = request.path_info
+  end
 
   # Actions
 

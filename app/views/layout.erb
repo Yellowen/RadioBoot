@@ -43,7 +43,7 @@
       <div class="item"><a href="http://www.facebook.com/radioboot"><i class="facebook squere icon"></i> <%= t(:facebook) %></a></div>
       <div class="item"><a href="https://www.google.com/+radioboot"><i class="google plus icon"></i> <%= t(:googleplus) %></a></div>
       <div class="item"><a href="/feed"><i class="rss icon"></i> <%= t(:rss) %></a></div>
-      <div class="item"><a href="/<%= @locale == 'fa' ?  'en' : 'fa' %>/" class="ui green tiny fluid button"> <%= t(:lang) %></a></div>
+      <div class="item"><a href="/<%= @locale == 'fa' ?  'en' : 'fa' %><%= @path %>" class="ui green tiny fluid button"> <%= t(:lang) %></a></div>
       <div class="item"><a class="blackcolored toggle button mobile" href="#"><i class="remove icon"></i> <%= t(:close) %></a></div>
     </div>
 
@@ -77,7 +77,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="/<%= @locale == 'fa' ?  'en' : 'fa' %>/" class="item ui green tiny button"><%= t(:lang) %></a>
+              <a href="/<%= @locale == 'fa' ?  'en' : 'fa' %><%= @path %>" class="item ui green tiny button"><%= t(:lang) %></a>
             </div>
 
           </div>
