@@ -147,7 +147,7 @@ class RadioApp < Sinatra::Application
   end
 
   get '/archive/' do
-    @episodes = Episode.all
+    @episodes = Episode.order_by('published_at DESC').all
     erb :'archive.html'
   end
 
