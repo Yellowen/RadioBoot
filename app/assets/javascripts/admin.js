@@ -87,6 +87,8 @@ $(function(){
 
     // Setup the dnd listeners.
     var dropZone = document.getElementById("drop_zone");
-    dropZone.addEventListener('dragover', handleDragOver, false);
-    dropZone.addEventListener('drop', handleFileSelect, false);
+    if (dropZone !== null) {
+        dropZone.addEventListener('dragover', handleDragOver, false);
+        dropZone.addEventListener('drop', handleFileSelect, false);
+    }
 });

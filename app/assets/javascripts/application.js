@@ -3,6 +3,7 @@
 //= require_tree ./semantic
 //= require_self
 //= require admin
+var author = {en: "Voices", fa: "صداها"};
 
 var auto_rotate = true;
 var last_time = 0;
@@ -58,8 +59,19 @@ $(function(){
                 $("#desc").append('<div class="descriptions" style="display:none;" id="desc_' + obj.id + '">' + desc + '</div>');
             });
         }
-    }
+        $("#episode_menu").prepend("<a class='topic active item' id='topic_author' data-id='author'>" + author[lang] + "</a>");
 
+        var authors = "<div class='ui very relaxed huge divided list'>";
+        _.forEach(details.authors, function(x){
+            authors += "<div class='item'><img class='ui avatar image' src='" + x.avatar_link + "'><div class='content'><div class='header'>" + x.name + "</div>";
+            _.each(_.keys(x.links), function(key){
+                authors += "<a href='" + x.links[key] + "'>" + key + "</a> ";
+            });
+            authors += "</div></div>";
+        });
+        authors += "</div>";
+        $("#desc").prepend('<div dir="ltr" style="direction: ltr; text-align: left;" class="descriptions" id="desc_author">' + authors + '</div>');
+    }
 
 
     $('video,audio').mediaelementplayer({
