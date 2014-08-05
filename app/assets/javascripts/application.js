@@ -4,6 +4,9 @@
 //= require_self
 //= require admin
 
+var auto_rotate = true;
+var last_time = 0;
+
 function show_error(id) {
     $("#subscribe").find('span').transition('remove looping');
     $(id).fadeIn().delay(4000).fadeOut();
@@ -16,6 +19,16 @@ function show_msg(id) {
     $("#email").hide();
     $(id).fadeIn();
 }
+
+function show_content_for(id) {
+    if (auto_rotate === true) {
+        $('.descriptions').hide();
+        $("#desc_" + id).fadeIn();
+        $("#episode_menu .item").removeClass('active');
+        $("#topic_" + id).addClass('active');
+    }
+}
+
 
 $(function(){
     $(".ui.message").on('click', function(event){
@@ -37,29 +50,36 @@ $(function(){
             var topics = details.topics.reverse();
             $.each(topics, function(x){
                 var obj = details.topics[x];
-                $("#episode_menu").prepend("<a class='item' id='topic_" + obj.id + "' data-id='" + obj.id + "'>" + obj[lang] + "</a>");
+                var desc =  details.sections[obj.id.toString()].desc[lang];
+                $("#episode_menu").prepend("<a class='topic item' id='topic_" + obj.id + "' data-id='" + obj.id + "'>" + obj[lang] + "</a>");
                 time_cache.push(parseInt(obj.time));
                 console.log(details.sections[obj.id.toString()].desc[lang]);
-                timed_content["id_" + parseInt(obj.time).toString()] = [obj.id, details.sections[obj.id.toString()].desc[lang]];
+                timed_content["id_" + parseInt(obj.time).toString()] = obj.id;
+                $("#desc").append('<div class="descriptions" style="display:none;" id="desc_' + obj.id + '">' + desc + '</div>');
             });
         }
     }
+
+
+
     $('video,audio').mediaelementplayer({
         success: function (mediaElement, domObject) {
 
             // add event listener
             mediaElement.addEventListener('timeupdate', function(e) {
                 var ctime = parseInt(mediaElement.currentTime);
-                if (ctime in time_cache) {
-                    console.log('matched');
-                    console.log(timed_content);
-                    var c = timed_content["id_"+ ctime.toString()];
-                    console.log(c);
-                    console.log(timed_content.keys());
-                    $("#desc").html(cache[1]);
-                    $("#episode_menu .item").removeClass('active');
-                    $("#topic_" + cache[0]).addClass('active');
+                console.log(ctime);
+                console.log(time_cache);
+                if (_.indexOf(time_cache, ctime) != -1) {
+                    if (last_time != ctime) {
+                        console.log('matched');
+                        console.log(timed_content);
+                        var topic_id = timed_content["id_"+ ctime.toString()];
+                        show_content_for(topic_id);
+                    }
+
                 }
+                last_time = ctime;
             }, false);
         },
     });
@@ -70,6 +90,18 @@ $(function(){
     $(".ui.sidebar").sidebar({overlay: true}).sidebar('attach events', '.toggle.button');
     $("#upload_file").on('click', function(event){
         $("#actual_field").click();
+    });
+
+    $('.topic').on('click', function(){
+        auto_rotate = true;
+        show_content_for($(this).data('id'));
+        $("#auto_rotate").fadeIn();
+        auto_rotate = false;
+    });
+
+    $("#auto_rotate").on('click', function(){
+        auto_rotate = true;
+        $(this).fadeOut();
     });
 
     $("#subscribe").on('click', function(event){

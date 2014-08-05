@@ -1,4 +1,5 @@
 en:
+  auto_rotate: 'Auto Rotate'
   success: "Transaction finished successfully."
   error: "Transaction failed. Try again."
   format_error: "Data format was not right."
