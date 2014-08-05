@@ -4,7 +4,7 @@ require 'mongoid'
 class Episode
   include Mongoid::Document
 
-  field :title, type: String
+  field :title, type: String, localize: true
   field :episode_number, type: String
   field :mp3_url, type: String
   field :ogg_url, type: String

@@ -78,7 +78,10 @@ module AdminPanel
         @episode = Episode.new
       end
 
+      locale = I18n.locale
+      I18n.locale = params[:locale].to_s.lower.to_sym
       @episode.title = params[:title]
+      I18n.locale = locale
       @episode.episode_number = params[:episode]
       @episode.mp3_url = params[:mp3_url]
       @episode.ogg_url = params[:ogg_url]

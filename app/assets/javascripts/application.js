@@ -118,6 +118,7 @@ $(function(){
 
     $(".langitem").on('click', function(){
         $("#titlelang").html($(this).html());
+        $("input[name=locale]").val($(this).html());
     });
 
     $("#subscribe").on('click', function(event){
