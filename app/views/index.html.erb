@@ -102,8 +102,15 @@
 
                 <% unless @last_episode.nil? %>
 
-                  <div class="ui dropdown item">
-                    <%= t(:share) %> <i class="dropdown icon"></i>
+                  <div class="ui dropdown purple item">
+                    <i class="download disk icon"></i> <%= t(:download) %><div class="menu">
+                      <a href="<%= @last_episode.mp3_url %>" class="item"><i class="cloud download icon"></i> <%= t(:mp3version) %></a> -
+                      <a href="<%= @last_episode.ogg_url %>" class="item"><i class="download cloud icon"></i> <%= t(:oggversion) %></a>
+                    </div>
+                  </div>
+
+                  <div class="ui dropdown purple item">
+                    <%= t(:share) %> <i class="heart icon"></i>
                     <div class="menu">
                       <a href="https://twitter.com/intent/tweet?source=Radio_Boot&text=<%= url_encode(@last_episode.title) %>&url=<%= url_encode("http://www.radioboot.com/podcasts/#{@last_episode.id}") %>" class="item"><i class="large twitter icon"></i> <%= t(:twitter) %></a>
                       <a href="http://www.facebook.com/sharer.php?u=<%= url_encode("http://www.radioboot.com/podcasts/#{@last_episode.id}") %>&t=<%= url_encode(@last_episode.title) %>" class="item"><i class="large facebook icon"></i> <%= t(:facebook) %></a>

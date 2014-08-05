@@ -1,4 +1,6 @@
 en:
+  mp3version: "MP3 version"
+  oggversion: "OGG version"
   auto_rotate: 'Auto Rotate'
   success: "Transaction finished successfully."
   error: "Transaction failed. Try again."

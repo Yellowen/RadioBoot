@@ -59,7 +59,7 @@ $(function(){
                 $("#desc").append('<div class="descriptions" style="display:none;" id="desc_' + obj.id + '">' + desc + '</div>');
             });
         }
-        $("#episode_menu").prepend("<a class='topic active item' id='topic_author' data-id='author'>" + author[lang] + "</a>");
+        $("#episode_menu").prepend("<a class='topic active purple item' id='topic_author' data-id='author'>" + author[lang] + "</a>");
 
         var authors = "<div class='ui very relaxed huge divided list'>";
         _.forEach(details.authors, function(x){
