@@ -79,7 +79,7 @@ module AdminPanel
       end
 
       locale = I18n.locale
-      I18n.locale = params[:locale].to_s.lower.to_sym
+      I18n.locale = params[:locale].to_s.downcase.to_sym
       @episode.title = params[:title]
       I18n.locale = locale
       @episode.episode_number = params[:episode]
