@@ -1,4 +1,6 @@
 fa:
+  sponsor_desc_html: !!escape
+    اگر مایلید از ما به هر صورتی حمایت کنید با ما از طریق ایمیل در تماس باشید ( <span class='email'></span> ). خوشحال می شویم از شما بشنویم.
   download: "دانلود"
   mp3version: "نسخه ام پی تری"
   oggversion: "نسخه او جی جی"

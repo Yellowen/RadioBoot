@@ -1,4 +1,6 @@
 en:
+  sponsor_desc_html: !!escape
+    If you are interested in supporting us by any means please contact us via email ( <span class='email'></span> ). We would be happy to hear about you.
   mp3version: "MP3 version"
   oggversion: "OGG version"
   auto_rotate: 'Auto Rotate'
