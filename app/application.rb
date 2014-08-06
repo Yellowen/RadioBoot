@@ -6,6 +6,7 @@ require 'sinatra/contrib'
 require 'sinatra/asset_pipeline'
 require 'i18n'
 require 'i18n/backend/fallbacks'
+require 'builder'
 
 require 'omniauth-twitter'
 require 'omniauth-github'
@@ -126,7 +127,7 @@ class RadioApp < Sinatra::Application
 
   # Actions
 
-  get '/podcasts/:id/' do
+  get '/episodes/:id/' do
     @episode = Episode.where(id: params[:id]).first
     return erb :'404.html' if @episode.nil?
     erb :'episode.html'
@@ -153,6 +154,11 @@ class RadioApp < Sinatra::Application
     rescue Mongoid::Errors::DocumentNotFound
       status 404
     end
+  end
+
+  get '/feed/' do
+    @episodes = Episode.order_by('published_at DESC').limit(20)
+    builder :feed
   end
 
   get '/archive/' do
