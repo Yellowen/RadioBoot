@@ -66,7 +66,7 @@ class RadioApp < Sinatra::Application
 
     end
     @app_root = File.expand_path(File.dirname(__FILE__))
-    Mongoid.load!(File.join(@app_root, './config/mongoid.yml'))
+    Mongoid.load!(File.join(@app_root, './config/mongoid.yml'), ENV['RACK_ENV'] || :development)
   end
 
   # Template helpers
