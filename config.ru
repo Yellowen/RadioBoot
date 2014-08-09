@@ -1,7 +1,10 @@
 require 'rubygems'
-require 'bundler'
 
-Bundler.require
+ENV['RACK_ENV'] ||= ENV['RAILS_ENV'] ||= 'development'
+
+require 'bundler/setup'
+
+Bundler.require(:default)
 
 require './app/application'
 
