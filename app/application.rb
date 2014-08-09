@@ -1,5 +1,5 @@
 require 'json'
-
+require 'xml-sitemap'
 require 'mongoid'
 require 'sinatra/base'
 require 'sinatra/contrib'
@@ -55,6 +55,7 @@ class RadioApp < Sinatra::Application
     I18n.backend.load_translations
 
     mime_type :json, 'text/json'
+    mime_type :xml, 'text/xml'
 
     use OmniAuth::Builder do
       provider :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
@@ -168,6 +169,20 @@ class RadioApp < Sinatra::Application
 
   get '/faq/' do
     erb :'faq.html'
+  end
+
+  get '/sitemap.xml' do
+    content_type :xml
+
+    map = XmlSitemap::Map.new('radioboot.com') do |m|
+      # Adds a simple page
+      m.add '/episodes'
+
+      # You can drop leading slash, it will be automatically added
+      m.add '/archive'
+    end
+
+    map.render
   end
 
   get '/signin/' do

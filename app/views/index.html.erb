@@ -172,7 +172,7 @@
 
      <div class="row">
        <div class="center aligned column">
-         <div class="ui left labeled icon button big black"><i class="dollar icon"></i> <%= t(:become_sponsor) %></div>
+         <div class="ui left labeled icon button big black" data-modal='.ui.modal'><i class="dollar icon"></i> <%= t(:become_sponsor) %></div>
        </div>
      </div>
   </div>
@@ -185,3 +185,14 @@
     <%= JSON.generate(@last_episode.details) %>
   <% end %>
 <% end %>
+
+
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    <%= t(:become_sponsor) %>
+  </div>
+  <div class="content">
+    <%= t(:sponsor_desc_html) %>
+  </div>
+</div>

@@ -104,6 +104,12 @@ $(function(){
     $(".ui.dropdown").dropdown();
     //$(".ui.computer.sidebar").sidebar('attach events', '.toggle.button.computer');
     $(".ui.sidebar").sidebar({overlay: true}).sidebar('attach events', '.toggle.button');
+
+    $('[data-modal]').on('click', function(){
+        $($(this).data('modal')).modal('show');
+    });
+
+
     $("#upload_file").on('click', function(event){
         $("#actual_field").click();
     });
@@ -174,5 +180,5 @@ $(function(){
         }
     });
 
-
+    $('.email').html('info@radioboot.com');
 });
