@@ -21,7 +21,7 @@ require_relative './models/episode'
 # Main Sinatra application class
 class RadioApp < Sinatra::Application
 
-  set :environment, ENV['RACK_ENV'] || 'development'
+  set :environment, ENV['RACK_ENV'] || :development
 
   # Setup configuration variables
   set :root, File.dirname(__FILE__)
@@ -66,7 +66,7 @@ class RadioApp < Sinatra::Application
 
     end
     @app_root = File.expand_path(File.dirname(__FILE__))
-    Mongoid.load!(File.join(@app_root, './config/mongoid.yml'))
+    Mongoid.load!(File.join(@app_root, './config/mongoid.yml', ENV['RACK_ENV'].to_sym || :development))
   end
 
   # Template helpers
