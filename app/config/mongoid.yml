@@ -78,6 +78,5 @@ production:
       username: <%= ENV['OPENSHIFT_MONGODB_DB_USERNAME'] %>
       password: <%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>
       options:
-        consistency: :strong
         safe: true
 <% end %>
