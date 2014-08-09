@@ -21,6 +21,8 @@ require_relative './models/episode'
 # Main Sinatra application class
 class RadioApp < Sinatra::Application
 
+  set :environment, ENV['RACK_ENV'] || 'development'
+
   # Setup configuration variables
   set :root, File.dirname(__FILE__)
   set :locales, ['en', 'fa']
