@@ -37,4 +37,3 @@ config/initializers/secret_token.rb
 docs/ruby
 docs/js
 node_modules/
-Gemfile.lock
