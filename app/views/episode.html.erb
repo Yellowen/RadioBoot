@@ -22,13 +22,15 @@
   <% end %>
 <% end %>
 
-<section class="blue player section">
+<section class="blue player section" id="listen">
   <div class="ui page stackable grid">
     <div class="row">
       <div class="center aligned column">
         <div class="playercontainer">
+          <% unless @episode.nil? %>
             <h2>#<%= @episode.episode_number %> <span><%= @episode.title %></span></h2>
             <audio class="audioplayer" src="<%= @episode.ogg_url %>"></audio>
+          <% end %>
         </div>
       </div>
     </div>
@@ -37,37 +39,41 @@
         <div class="description">
           <div class="ui two column stackable grid">
             <div class="four wide column">
-              <div class="ui vertical pointing menu">
-                <a class="active item">
-                  Home
-                </a>
-                <a class="item">
-                  Messages
-                </a>
-                <a class="item">
-                  Friends
-                </a>
+              <div class="ui vertical pointing menu" id="episode_menu">
 
 
 
-                <div class="ui dropdown item">
-                  <%= t(:share) %> <i class="dropdown icon"></i>
-                  <div class="menu">
-                    <a href="https://twitter.com/intent/tweet?source=Radio_Boot&text=<%= url_encode(@episode.title) %>&url=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>" class="item"><i class="large twitter icon"></i> <%= t(:twitter) %></a>
-                    <a href="http://www.facebook.com/sharer.php?u=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>&t=<%= url_encode(@episode.title) %>" class="item"><i class="large facebook icon"></i> <%= t(:facebook) %></a>
-                    <a href="https://plus.google.com/share?text=<%= url_encode(@episode.title) %>&url=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>" class="item"><i class="large google plus icon"></i> <%= t(:googleplus) %></a>
-                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>&title=<%= url_encode(@episode.title) %>&source=<%= url_encode('http://www.radioboot.com') %>" class="item"><i class="large linkedin icon"></i> <%= t(:linkedin) %></a>
+                <% unless @episode.nil? %>
 
+                  <div class="ui dropdown purple item">
+                    <i class="download disk icon"></i> <%= t(:download) %><div class="menu">
+                      <a href="<%= @episode.mp3_url %>" class="item"><i class="cloud download icon"></i> <%= t(:mp3version) %></a>
+                      <a href="<%= @episode.ogg_url %>" class="item"><i class="download cloud icon"></i> <%= t(:oggversion) %></a>
+                    </div>
                   </div>
 
-                </div>
+                  <div class="ui dropdown purple item">
+                    <%= t(:share) %> <i class="heart icon"></i>
+                    <div class="menu">
+                      <a href="https://twitter.com/intent/tweet?source=Radio_Boot&text=<%= url_encode(@episode.title) %>&url=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>" class="item"><i class="large twitter icon"></i> <%= t(:twitter) %></a>
+                      <a href="http://www.facebook.com/sharer.php?u=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>&t=<%= url_encode(@episode.title) %>" class="item"><i class="large facebook icon"></i> <%= t(:facebook) %></a>
+                      <a href="https://plus.google.com/share?text=<%= url_encode(@episode.title) %>&url=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>" class="item"><i class="large google plus icon"></i> <%= t(:googleplus) %></a>
+                      <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= url_encode("http://www.radioboot.com/episodes/#{@episode.id}") %>&title=<%= url_encode(@episode.title) %>&source=<%= url_encode('http://www.radioboot.com') %>" class="item"><i class="large linkedin icon"></i> <%= t(:linkedin) %></a>
 
+                    </div>
+                  </div>
+                  <div id="auto_rotate" class="item" style="display: none;">
+                    <button class="ui small left fluid labeled icon red button"> <i class="refresh icon"></i> <%= t(:auto_rotate) %></button>
+                  </div>
+
+                <% end %>
               </div>
 
 
             </div>
+
             <div class="twelve wide column">
-              <div class="ui segment titles">
+              <div class="ui segment titles" id="desc">
               </div>
             </div>
           </div>
