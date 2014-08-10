@@ -1,5 +1,40 @@
 require 'json'
 require 'xml-sitemap'
+require 'moped/connection'
+require 'moped/connection/socket/connectable'
+
+if ENV.include? 'OPENSHIFT_RUBY_IP'
+module Moped
+  class Connection
+    module Socket
+      class TCP
+        def initialize(host, port, local_host, local_port)
+          @host, @port = host, port
+          handle_socket_errors { super(host, port, local_host) }
+        end
+
+        def self.connect(host, port, timeout)
+          puts "<<<< #{host} #{port}"
+          begin
+            Timeout::timeout(timeout) do
+              sock = new(host, port, ENV['OPENSHIFT_RUBY_IP'], 15200)
+              sock.set_encoding('binary')
+              timeout_val = [ timeout, 0 ].pack("l_2")
+              sock.setsockopt(::Socket::IPPROTO_TCP, ::Socket::TCP_NODELAY, 1)
+              sock.setsockopt(::Socket::SOL_SOCKET, ::Socket::SO_RCVTIMEO, timeout_val)
+              sock.setsockopt(::Socket::SOL_SOCKET, ::Socket::SO_SNDTIMEO, timeout_val)
+              sock
+            end
+          rescue Timeout::Error
+            raise Errors::ConnectionFailure, "Timed out connection to Mongo on #{host}:#{port}"
+          end
+        end
+      end
+    end
+  end
+end
+end
+
 require 'mongoid'
 require 'sinatra/base'
 require 'sinatra/contrib'
@@ -17,6 +52,7 @@ require_relative './lib/mailgun'
 require_relative './lib/admin'
 
 require_relative './models/episode'
+
 
 # Main Sinatra application class
 class RadioApp < Sinatra::Application
