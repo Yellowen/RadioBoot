@@ -4,6 +4,7 @@ require 'xml-sitemap'
 # Patch moped to fix openshift IP binding problem
 if ENV.include? 'OPENSHIFT_RUBY_IP'
 
+  require 'moped'
   require 'moped/connection'
   require 'moped/connection/socket/connectable'
 
