@@ -73,14 +73,16 @@ class RadioApp < Sinatra::Application
   set :mailinglist, 'newsletter@radioboot.com'
   set :mailgun_api_key, ENV['MAILGUN_API_KEY']
 
-  set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gnu.org'}
+  set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gmail.com'}
+
+  #use Rack::Session::Pool, :expire_after => 2592000
 
   @title = 'RadioBoot'
 
   # Enabling features
   enable :sessions
   enable :logging
-  set :session_secret, 'TODO'
+  set :session_secret, ENV['SESSION_SECRET'] || 'TODO'
 
   register Sinatra::AssetPipeline
 
