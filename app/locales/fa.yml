@@ -1,4 +1,6 @@
 fa:
+  on_github: !!escape
+    نرم افزار وب رادیو بوت در <a href="//github.com/Yellowen/RadioBoot">گیت هاب</a>
   sponsor_desc_html: !!escape
     اگر مایلید از ما به هر صورتی حمایت کنید با ما از طریق ایمیل در تماس باشید ( <span class='email'></span> ). خوشحال می شویم از شما بشنویم.
   download: "دانلود"
@@ -67,7 +69,6 @@ fa:
   submit: ثبت
   email: ایمیل
   about: رادیو بوت، به بهانه تکنولوژی
-  last_episode: آخرین قسمت
   thanks_sponsors: با تشکر از حامیان رادیو‌بوت که بدون حمایت آنان راه‌اندازی این پادکست امکان‌پذیر نبود
   become_sponsor: به جمع حامیان بپیوندید
   rss: "آر اس اس"
