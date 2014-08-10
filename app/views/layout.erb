@@ -16,7 +16,11 @@
 
     <%= stylesheet_tag 'application_rtl' if @locale == "fa" %>
     <%= stylesheet_tag 'application_ltr' if @locale == "en" %>
-    <%= javascript_tag 'application', :expand => true %>
+    <% if ENV['RACK_ENV'] == 'production' %>
+      <%= javascript_tag 'application' %>
+    <% else %>
+      <%= javascript_tag 'application', :expand => true %>
+    <% end %>
 
   </head>
   <body>
