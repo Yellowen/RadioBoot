@@ -1,5 +1,7 @@
 require 'json'
 require 'xml-sitemap'
+
+# Patch moped to fix openshift IP binding problem
 if ENV.include? 'OPENSHIFT_RUBY_IP'
 
   require 'moped/connection'
@@ -9,16 +11,15 @@ if ENV.include? 'OPENSHIFT_RUBY_IP'
     class Connection
       module Socket
         class TCP
-          def initialize(host, port, local_host, local_port)
+          def initialize(host, port, local_host)
             @host, @port = host, port
             handle_socket_errors { super(host, port, local_host) }
           end
 
           def self.connect(host, port, timeout)
-            puts "<<<< #{host} #{port}"
             begin
               Timeout::timeout(timeout) do
-                sock = new(host, port, ENV['OPENSHIFT_RUBY_IP'], 15200)
+                sock = new(host, port, ENV['OPENSHIFT_RUBY_IP'])
                 sock.set_encoding('binary')
                 timeout_val = [ timeout, 0 ].pack("l_2")
                 sock.setsockopt(::Socket::IPPROTO_TCP, ::Socket::TCP_NODELAY, 1)
@@ -72,7 +73,7 @@ class RadioApp < Sinatra::Application
   set :mailinglist, 'newsletter@radioboot.com'
   set :mailgun_api_key, ENV['MAILGUN_API_KEY']
 
-  #set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gnu.org'}
+  set :admins, {'lxsameer' => 'lxsameer@gnu.org', 'yottanami' => 'yottanami@gnu.org'}
 
   @title = 'RadioBoot'
 

@@ -39,14 +39,11 @@ $(function(){
     var json_data = $("#tmp").html().trim(),
         details, lang, time_cache, timed_content;
 
-    console.log(json_data.trim().length);
     if (json_data !== "") {
         details = JSON.parse(json_data);
         lang = $("html").attr('lang');
         time_cache = [];
         timed_content = {};
-        console.log(details);
-        console.log(_.isEmpty(details));
         if (!_.isEmpty(details)) {
 
             var topics = details.topics.reverse();
@@ -55,7 +52,6 @@ $(function(){
                 var desc =  details.sections[obj.id.toString()].desc[lang];
                 $("#episode_menu").prepend("<a class='topic item' id='topic_" + obj.id + "' data-id='" + obj.id + "'>" + obj[lang] + "</a>");
                 time_cache.push(parseInt(obj.time));
-                console.log(details.sections[obj.id.toString()].desc[lang]);
                 timed_content["id_" + parseInt(obj.time).toString()] = obj.id;
                 $("#desc").append('<div class="descriptions" style="display:none;" id="desc_' + obj.id + '">' + desc + '</div>');
             });
@@ -84,12 +80,8 @@ $(function(){
             // add event listener
             mediaElement.addEventListener('timeupdate', function(e) {
                 var ctime = parseInt(mediaElement.currentTime);
-                console.log(ctime);
-                console.log(time_cache);
                 if (_.indexOf(time_cache, ctime) != -1) {
                     if (last_time != ctime) {
-                        console.log('matched');
-                        console.log(timed_content);
                         var topic_id = timed_content["id_"+ ctime.toString()];
                         show_content_for(topic_id);
                     }
