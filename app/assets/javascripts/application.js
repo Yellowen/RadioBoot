@@ -9,6 +9,9 @@ var _links = {en: 'Links', fa: 'لینک ها'};
 var auto_rotate = true;
 var last_time = 0;
 
+var details, lang, time_cache, timed_content;
+
+
 function show_error(id) {
     $("#subscribe").find('span').transition('remove looping');
     $(id).fadeIn().delay(4000).fadeOut();
@@ -31,9 +34,8 @@ function show_content_for(id) {
     }
 }
 
-function prepare_details(){
-    var details, lang, time_cache, timed_content;
 
+function prepare_details(){
     if ((JSON_DETAILS !== "")|| (JSON_DETAILS !== undefined)) {
         details = JSON_DETAILS;//JSON.parse(json_data);
         lang = $("html").attr('lang');
