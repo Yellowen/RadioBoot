@@ -74,7 +74,7 @@ $(function(){
     }
 
 
-    $('video,audio').mediaelementplayer({
+    $('.audioplayer').mediaelementplayer({
         success: function (mediaElement, domObject) {
 
             // add event listener

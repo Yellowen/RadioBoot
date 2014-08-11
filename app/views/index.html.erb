@@ -86,7 +86,8 @@
         <div class="playercontainer">
           <% unless @last_episode.nil? %>
             <h2>#<%= @last_episode.episode_number %> <span><%= @last_episode.title %></span></h2>
-            <audio class="audioplayer" src="<%= @last_episode.ogg_url %>"></audio>
+            <audio class="audioplayer" src="<%= @last_episode.ogg_url %>" preload="none">
+            </audio>
           <% end %>
         </div>
       </div>
