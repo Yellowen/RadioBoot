@@ -82,3 +82,17 @@
     </div>
   </div>
 </section>
+
+
+
+<% content_for :tmp do %>
+  <script>
+  <% unless @episode.nil? %>
+    <% require 'json' %>
+   var JSON_DETAILS = <%= JSON.generate(@episode.details) %>;
+   <% else %>
+   var JSON_DETAILS = undefined;
+  <% end %>
+   prepare_details();
+  </script>
+<% end %>

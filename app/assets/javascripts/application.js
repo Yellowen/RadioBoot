@@ -4,6 +4,7 @@
 //= require_self
 //= require admin
 var author = {en: "Voices", fa: "صداها"};
+var _links = {en: 'Links', fa: 'لینک ها'};
 
 var auto_rotate = true;
 var last_time = 0;
@@ -30,12 +31,7 @@ function show_content_for(id) {
     }
 }
 
-
-$(function(){
-    $(".ui.message").on('click', function(event){
-        $(this).fadeOut();
-    });
-
+function prepare_details(){
     var details, lang, time_cache, timed_content;
 
     if ((JSON_DETAILS !== "")|| (JSON_DETAILS !== undefined)) {
@@ -52,7 +48,14 @@ $(function(){
                 $("#episode_menu").prepend("<a class='topic item' id='topic_" + obj.id + "' data-id='" + obj.id + "'>" + obj[lang] + "</a>");
                 time_cache.push(parseInt(obj.time));
                 timed_content["id_" + parseInt(obj.time).toString()] = obj.id;
-                $("#desc").append('<div class="descriptions" style="display:none;" id="desc_' + obj.id + '">' + desc + '</div>');
+
+                // Inject links
+                var links = "<br /><br /><span class='links'>" + _links[lang] + ":</span><div class='ui divided horizontal list'>";
+                _.each(_.keys(details.sections[obj.id.toString()].links), function(link){
+                    links += "<div class='item'><a href='" + details.sections[obj.id.toString()].links[link] + "'>" + link + "</a></div>";
+                });
+                links += "</div>";
+                $("#desc").append('<div class="descriptions" style="display:none;" id="desc_' + obj.id + '">' + desc + links + '</div>');
             });
         }
 
@@ -72,6 +75,12 @@ $(function(){
         }
     }
 
+}
+
+$(function(){
+    $(".ui.message").on('click', function(event){
+        $(this).fadeOut();
+    });
 
     $('.audioplayer').mediaelementplayer({
         success: function (mediaElement, domObject) {
