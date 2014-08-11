@@ -36,11 +36,10 @@ $(function(){
         $(this).fadeOut();
     });
 
-    var json_data = $("#tmp").html().trim(),
-        details, lang, time_cache, timed_content;
+    var details, lang, time_cache, timed_content;
 
-    if (json_data !== "") {
-        details = JSON.parse(json_data);
+    if ((JSON_DETAILS !== "")|| (JSON_DETAILS !== undefined)) {
+        details = JSON_DETAILS;//JSON.parse(json_data);
         lang = $("html").attr('lang');
         time_cache = [];
         timed_content = {};
@@ -89,7 +88,7 @@ $(function(){
                 }
                 last_time = ctime;
             }, false);
-        },
+        }
     });
 
 

@@ -71,7 +71,7 @@ $(function(){
                     })
                     .fail(function(data){
                         admin_show_err();
-                    })
+                    });
 
             });
             reader.readAsText(f);

@@ -181,10 +181,14 @@
 
 
 <% content_for :tmp do %>
+  <script>
   <% unless @last_episode.nil? %>
     <% require 'json' %>
-    <%= JSON.generate(@last_episode.details) %>
+   var JSON_DETAILS = <%= JSON.generate(@last_episode.details) %>;
+   <% else %>
+   var JSON_DETAILS = undefined;
   <% end %>
+  </script>
 <% end %>
 
 
