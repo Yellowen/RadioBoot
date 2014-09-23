@@ -127,12 +127,10 @@ class RadioApp < Sinatra::Application
 
     # define a current_user method, so we can be sure if an user is authenticated
     def signed_in?
-      return true
       !session[:uid].nil?
     end
 
     def admin?
-      return true
       return true if settings.admins.values.include? user
       return true if settings.admins.keys.include? user
       false
