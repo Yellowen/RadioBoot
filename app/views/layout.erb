@@ -40,7 +40,7 @@
     </div>
 
     <div class="ui mobile only thin left sidebar floating vertical menu">
-      <div class="item"><a href="#listen"><%= t(:last_episode) %></a></div>
+      <div class="item"><a href="/#listen"><%= t(:last_episode) %></a></div>
       <div class="item"><a href="/archive/"><%= t(:archive) %></a></div>
       <!-- <div class="item"><a href="/faq"><%= t(:faq) %></a></div>-->
       <div class="item"><a href="http://twitter.com/radio_boot"><i class="twitter icon"></i> <%= t(:twitter) %></a></div>
@@ -57,7 +57,7 @@
           <a href="/"><h1 class="item"><%= t(:radio_boot) %></h1></a>
           <div class="right menu">
 
-            <a href="#listen" class="item"><%= t(:last_episode) %></a>
+            <a href="/#listen" class="item"><%= t(:last_episode) %></a>
             <a href="/archive/" class="item"><%= t(:archive) %></a>
             <% if signed_in? %>
               <% if admin? %>
