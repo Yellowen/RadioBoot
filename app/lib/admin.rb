@@ -101,19 +101,19 @@ module AdminPanel
 
     base.post '/admin/upload' do
       begin
-        data = JSON.parse(params[:json].force_encoding("utf-8"))
+        data = JSON.parse(params[:json].force_encoding('utf-8'))
         ep = Episode.find(params[:id])
         ep.details = data
         ep.save
-        JSON.generate({status: "0"})
+        JSON.generate({status: '0'})
       rescue JSON::ParserError => e
-        JSON.generate({status: "1", msg: e.to_s})
+        JSON.generate({status: '1', msg: e.to_s})
       rescue Encoding::UndefinedConversionError => e
-        JSON.generate({status: "1", msg: e.to_s})
+        JSON.generate({status: '1', msg: e.to_s})
+      rescue Exception => e
+        JSON.generate({status: '1', msg: e.to_s})
       end
     end
-
-
   end
 
 end
