@@ -126,18 +126,21 @@ class RadioApp < Sinatra::Application
     end
 
     def debug?
-      dev = File.exapand_path(__FILE__, "../.development")
-      puts ">>>>>>> ", dev.exist?
-      return true if dev.exist?
+      dev = [File.expand_path(File.dirname(__FILE__),
+                             '../'), '.development'].join("/")
+
+      return true if File.exist? dev
       false
     end
 
     # define a current_user method, so we can be sure if an user is authenticated
     def signed_in?
+      return true if debug?
       !session[:uid].nil?
     end
 
     def admin?
+      return true if debug?
       return true if settings.admins.values.include? user
       return true if settings.admins.keys.include? user
       false
