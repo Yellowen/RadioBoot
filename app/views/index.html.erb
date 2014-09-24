@@ -149,9 +149,9 @@
             <script type="text/javascript">
              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
              var disqus_shortname = 'radioboot'; // required: replace example with your forum shortname
-             var disqus_identifier = '<%= @last_episode.id %>';
+             var disqus_identifier = 'episode_<%= @last_episode.episode_number %>';
              var disqus_title = '<%= @last_episode.title %> ';
-             var disqus_url = 'http://www.radioboot.com/episodes/<%= @last_episode.id %>/';
+             var disqus_url = 'http://www.radioboot.com/episodes/<%= @last_episode.episode_number %>/';
 
              /* * * DON'T EDIT BELOW THIS LINE * * */
              (function() {

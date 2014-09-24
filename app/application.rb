@@ -182,7 +182,7 @@ class RadioApp < Sinatra::Application
   # Actions
 
   get '/episodes/:id/' do
-    @episode = Episode.where(id: params[:id]).first
+    @episode = Episode.where(episode_number: params[:id]).first
     return erb :'404.html' if @episode.nil?
     erb :'episode.html'
   end
@@ -194,7 +194,7 @@ class RadioApp < Sinatra::Application
       I18n.locale = 'fa'
     end
 
-    @last_episode = Episode.last
+    @last_episode = Episode.order_by('episode_number DESC').last
     erb :'index.html'
 
   end
@@ -211,12 +211,12 @@ class RadioApp < Sinatra::Application
   end
 
   get '/feed/' do
-    @episodes = Episode.order_by('published_at DESC').limit(20)
+    @episodes = Episode.order_by('episode_number DESC').limit(20)
     builder :feed
   end
 
   get '/archive/' do
-    @episodes = Episode.order_by('published_at DESC').all
+    @episodes = Episode.order_by('episode_number DESC').all
     erb :'archive.html'
   end
 
