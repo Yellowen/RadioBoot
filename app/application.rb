@@ -194,7 +194,7 @@ class RadioApp < Sinatra::Application
       I18n.locale = 'fa'
     end
 
-    @last_episode = Episode.order_by('episode_number DESC').last
+    @last_episode = Episode.order_by('episode_number ASC').last
     erb :'index.html'
 
   end
