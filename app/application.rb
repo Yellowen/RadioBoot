@@ -211,12 +211,12 @@ class RadioApp < Sinatra::Application
   end
 
   get '/feed/' do
-    @episodes = Episode.order_by('episode_number ASC').limit(20)
+    @episodes = Episode.order_by('episode_number DESC').limit(20)
     builder :feed
   end
 
   get '/archive/' do
-    @episodes = Episode.order_by('episode_number ASC').all
+    @episodes = Episode.order_by('episode_number DESC').all
     erb :'archive.html'
   end
 

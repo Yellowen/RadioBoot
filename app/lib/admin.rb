@@ -36,7 +36,7 @@ module AdminPanel
       end
 
       @episode ||= Episode.new
-      @episodes = Episode.order_by('episode_number ASC').all
+      @episodes = Episode.order_by('episode_number DESC').all
       erb :'admin.html'
     end
 
