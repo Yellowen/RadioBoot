@@ -1,0 +1,110 @@
+{
+    "authors": [
+        {
+            "name": "Lxsameer",
+            "avatar_link": "http://www.gravatar.com/avatar/15482f7b6361b463ea4b113d5a502400",
+            "links": {
+                "<i class='twitter icon'></i>": "http://twitter.com/lxsameer",
+                "<i class='github icon'></i>": "http://github.com/lxsameer",
+                "<i class='globe icon'></i>": "http://lxsameer.com"
+            }
+        },
+        {
+            "name": "Yottanami",
+            "avatar_link": "http://www.gravatar.com/avatar/2e7e32aa00fd8d2f751e31b70978279b",
+            "links": {
+                "<i class='twitter icon'></i>": "http://twitter.com/yottanami",
+                "<i class='github icon'></i>": "http://github.com/yottanami",
+                "<i class='globe icon'></i>": "http://blog.yottanami.com"
+            }
+        },
+        {
+            "name": "ShervinAra",
+            "avatar_link": "https://lh4.googleusercontent.com/-xIdMxLWBJbY/AAAAAAAAAAI/AAAAAAAAAAA/icONWV4HlQE/s128-c-k/photo.jpg",
+            "links": {
+                "<i class='twitter icon'></i>": "http://twitter.com/shervinara",
+                "<i class='github icon'></i>": "http://github.com/shervinara"
+            }
+        }
+
+    ],
+
+    "topics": [
+        {
+            "id": 0,
+            "time": 90,
+            "en": "News",
+            "fa": "اخبار"
+        },{
+            "id": 1,
+            "time":290 ,
+            "en": "IRC Culture",
+            "fa": "فرهنگ آی‌آر‌سی"
+        },{
+            "id": 2,
+            "time":960 ,
+            "en": "Python 3 is killing Python",
+            "fa": "آیا پایتون۳ پایتون را می‌کشد؟"
+        },{
+            "id": 3,
+            "time": 2080,
+            "en": "The Pick",
+            "fa": "The Pick"
+        }
+
+
+
+    ],
+
+    "sections": {
+        "0": {
+            "desc": {
+                "en": "Five milion Google passwords went public - Rails 4.2-beta released - Some of the Gnu/Linux distros dedicated their release to the great Denis Ritchie",
+                "fa": "در روزهای اخیر پنج میلیون کلمه عبور کاربرهای گوگل لو رفت. بستر وب محبوب روبی‌آن‌ریلز ۴.۲ بتا منتشر شد. بعضی از توزیع‌های شناخته شده نسخه اخیرشون رو به دنیس ریچی دانشمند بزرگ  دنیای کامپیوتر تقدیم کردند"
+            },
+            "links": {
+                "Linus": "http://www.linuxinsider.com/story/80944.html",
+                "Martin ShamoonPour 8-bit (music)": "https://soundcloud.com/martinshamoonpour",
+                "Rails 1,4 release note": "http://edgeguides.rubyonrails.org/4_1_release_notes.html",
+                "Dennis Ritchie": "https://en.wikipedia.org/wiki/Dennis_Ritchie"
+            }
+        },
+        "1": {
+            "desc": {
+                "en": "How to use IRC in a better way with respect to other users and finding answers of our questions fast.",
+                "fa": "چه طور از آی‌آرسی بهتر استفاده کنیم و به سایر کاربرهای آی‌آر‌سی احترام بگذاریم و پاسخ سوال‌های خودمون رو سریع‌تر بگیریم"
+            },
+            "links": {
+                "IRC": "https://en.wikipedia.org/wiki/Internet_Relay_Chat",
+                "How To Ask Questions The Smart Way": "http://www.catb.org/esr/faqs/smart-questions.html",
+                "5hit channel on Freenode": "http://webchat.freenode.net/?channels=5hit&uio=d4"
+            }
+        },
+        "2": {
+            "desc": {
+                "en": "Some of the Python users believe that Python3 will be the terminator for Python programming language and so enough it will kill the joy of many Python users. Are you agree with this or not ?",
+                "fa": "بعضی از کاربران زبان برنامه‌نویسی پایتون اعتقاد دارند که نسخه سوم پایتون باعث از دور خارج شدن این زبان خواهد شد. نظر شما در این مورد چیه؟ "
+            },
+            "links": {
+                "Python 3 is killing Python": "https://medium.com/@thezerobit/pytPpGhon-3-is-killing-python-5d2ad703365d",
+                "Python 3 release note": "https://www.python.org/download/releases/3.0/whatsnew",
+                "On porting to Python 3 as the answer": "https://mail.python.org/pipermail/python-dev/2014-March/133413.html",
+                "Extend Python 2,7": "https://hg.python.org/peps/rev/76d43e52d978"
+            }
+        },
+        "3": {
+            "desc": {
+                "en": "We pick some stuff which we found interesting in past couple of weeks in 'The Pick' section. This episode we talked about 'Amature Radio', Some application for spleepy people, Gitter service, Rails assets and wonderful Teeworlds game. ",
+                "fa": "تو بخش 'The Pick' به مطالب جالبی که توی هفته‌های اخیر تجربه کردیم اشاره می‌کنیم. تو این شماره در رابطه با مواردی مثل رادیو آماتوری و اپلیکیشن‌های موبایل برای خواب‌آلودها و همینطور یادگیری زبان صحبت کردیم "
+            },
+            "links": {
+                "Amateur radio": "https://en.wikipedia.org/wiki/Amateur_radio",
+                "SpinMe": "https://play.google.com/store/apps/details?id=com.spinmealarmclock&hl=en",
+                "Wakie": "http://wakie.com/",
+                "Gitter": "https://gitter.im/",
+                "Rails Assets": "https://rails-assets.org/",
+                "Teeworlds": "https://www.teeworlds.com/"
+            }
+        }
+    }
+}

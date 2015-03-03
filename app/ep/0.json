@@ -1,0 +1,59 @@
+{
+    "authors": [
+        {
+            "name": "Lxsameer",
+            "avatar_link": "http://www.gravatar.com/avatar/15482f7b6361b463ea4b113d5a502400",
+            "links": {
+                "<i class='twitter icon'></i>": "http://twitter.com/lxsameer",
+                "<i class='github icon'></i>": "http://github.com/lxsameer",
+                "<i class='globe icon'></i>": "http://lxsameer.com"
+            }
+        },
+        {
+            "name": "Yottanami",
+            "avatar_link": "http://www.gravatar.com/avatar/2e7e32aa00fd8d2f751e31b70978279b",
+            "links": {
+                "<i class='twitter icon'></i>": "http://twitter.com/yottanami",
+                "<i class='github icon'></i>": "http://github.com/yottanami",
+                "<i class='globe icon'></i>": "http://blog.yottanami.com"
+            }
+        }
+
+    ],
+
+    "topics": [
+        {
+            "id": 0,
+            "time": 40,
+            "en": "Introduction",
+            "fa": "مقدمه"
+        },
+        {
+            "id": 1,
+            "time": 120,
+            "en": "Next Episode",
+            "fa": "شماره بعدی"
+        }
+    ],
+
+    "sections": {
+        "0": {
+            "desc": {
+                "en": "RadioBoot is a public podcast about Technology, Free Software and any interesting subject you and we may like. We are trying to publish a technical podcast with our minimal tools. At this point we use a built-in laptop mic along side with Audacity.",
+                "fa": "رادیو بوت پادکستیست در رابطه با فن آوری، نرم افزارهای آزاد و در کل در مورد هر موضوعی که شما و ما به آن علاقه داشته باشیم. ما تلاش می کنیم تا با کمترین امکاناتی که در اختیار داریم پادکستی فنی ارائه بدیم. در حال حاضر ما از میکروفن داخلی یک لپ تاپ به همراه نرم افزار Audacity استفاده می کنیم."
+            },
+            "links": {
+                "Audacity": "http://audacity.sourceforge.net/"
+            }
+        },
+        "1": {
+            "desc": {
+                "en": "We are trying to prepare the next episode (#1) as soon as possible. If you like, you can help us to publish next episode by giving us feedbacks and interesting topics.",
+                "fa": "سعی می کنیم اولین شماره‌ی رادیو بوت رو هرچه زودتر اماده کنیم. شما هم می تونین تو این کار با ارسال نظرات و پیشنهادات و حتی عناوین جالب به ما کمک کنید."
+            },
+            "links": {
+                "RadioBoot": "http://radioboot.com"
+            }
+        }
+    }
+}

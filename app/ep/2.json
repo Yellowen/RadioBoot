@@ -1,0 +1,145 @@
+{
+    "authors": [
+        {
+            "name": "lxsameer",
+            "avatar_link": "http://www.gravatar.com/avatar/15482f7b6361b463ea4b113d5a502400",
+            "links": {
+                "<i class='fa fa-twitter'></i>": "http://twitter.com/lxsameer",
+                "<i class='fa fa-github'></i>": "http://github.com/lxsameer",
+		"<i class='fa fa-linkedin'></i>": "http://ir.linkedin.com/in/lxsameer/en",
+                "<i class='fa fa-globe'></i>": "http://lxsameer.com/"
+            }
+        },
+        {
+            "name": "yottanami",
+            "avatar_link": "http://www.gravatar.com/avatar/2e7e32aa00fd8d2f751e31b70978279b",
+            "links": {
+                "<i class='fa fa-twitter'></i>": "http://twitter.com/yottanami",
+                "<i class='fa fa-github'></i>": "http://github.com/yottanami",
+		"<i class='fa fa-linkedin'></i>": "https://ir.linkedin.com/pub/behnam-ahmad-khan-beigi/55/930/857",
+                "<i class='fa fa-globe'></i>": "http://yottanami.com/"
+
+            }
+        },
+        {
+            "name": "The Lagman",
+            "avatar_link": "http://us.yunix.net/~lagman/mff.jpg",
+            "links": {
+                "<i class='fa fa-twitter'></i>": "https://twitter.com/xerolag",
+                "<i class='fa fa-globe'></i>": "http://shirazlug.ir/"
+
+            }
+        },
+        {
+            "name": "SadMad",
+            "avatar_link": "https://pbs.twimg.com/profile_images/441341264730943488/VWi9fgc2_400x400.jpeg",
+            "links": {
+                "<i class='fa fa-twitter'></i>": "https://twitter.com/sarmadrezayat",
+                "<i class='fa fa-linkedin'></i>": "http://ir.linkedin.com/pub/sarmad-rezayat/87/bb5/89",
+                "<i class='fa fa-globe'></i>": "http://www.sarmadr.com/"
+
+            }
+        }
+
+    ],
+
+    "topics": [
+        {
+            "id": 0,
+            "time": 35,
+            "en": "Introduction",
+            "fa": "مقدمه"
+        },
+        {
+            "id": 1,
+            "time": 160,
+            "en": "How to become a true developer?",
+            "fa": "چگونه یک توسعه دهنده شویم؟"
+        },
+        {
+            "id": 2,
+            "time": 2046,
+            "en": "ElasticSearch",
+            "fa": "الستیک سرچ"
+        },
+        {
+            "id": 3,
+            "time": 2917,
+            "en": "The great troll",
+            "fa": "ترول اعظم"
+        },
+        {
+            "id": 4,
+            "time": 3330,
+            "en": "The Pick",
+            "fa": "The Pick"
+        }
+
+
+    ],
+
+    "sections": {
+        "0": {
+            "desc": {
+                "en": "In this episode we want to talk about becoming a true developer in general discussion and Elastic search in technical discussion.",
+                "fa": "در این قسمت و در بخش عمومی در مورد چگونگی تبدیل شدن به یک توسعه دهنده صحبت خواهیم کرد و در بخش تخصصی هم با موتور سرچ الستیک سرچ آشنا خواهیم شد."
+            },
+            "links": [
+                "http://google.com",
+                "http://yellowne.com"
+            ]
+        },
+        "1": {
+            "desc": {
+                "en": "In this section we want to talk about the true way to become a developer. A full-fledge developer who can amaze other people and contribute to the world of FOSS.",
+                "fa": "در این بخش در رابطه با راه درست برای تبدیل شدن به یک توسعه دهنده کامل و و موفق صحبت می‌کنیم ."
+            },
+            "links": {
+                "Howto become a hacker": "http://www.catb.org/esr/faqs/hacker-howto.html",
+                "<i class='fa fa-github'></i> Help": "https://help.github.com/"
+            }
+        },
+        "2": {
+            "desc": {
+                "en": "Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. Elasticsearch is the second most popular enterprise search engine.",
+                "fa": "الستیک سرچ موتور جستوجو گری بر اساس نرم افزار Lucene است که با قابلیت ها بسیار کارا و مدرن به یکی از محبوب ترین موتور های جستوجو تبدیل شده .این متور توسط زبان برنامه نویسی جاوا نوشته شده است و نرم افزاری آزاد است"
+            },
+            "links": {
+                "ElasticSearch": "http://www.elasticsearch.org/",
+                "Lucene": "http://lucene.apache.org/"
+            }
+        },
+        "3": {
+            "desc": {
+                "en": "'The Great Troll' talks about ShirazLUG and his experiences.",
+                "fa": "ترول اعظم در مورد شیراز لاگ و تجربیات خودش صحبت می کنه."
+            },
+            "links": {
+                "Shiraz LUG": "http://shirazlug.ir"
+            }
+        },
+        "4": {
+            "desc": {
+                "en": "We pick some stuff which we found interesting in past couple of weeks in 'The Pick' section. This episode we talked about our problem and several funny applications.",
+                "fa": "تو بخش 'The Pick' به مطالب جالبی که توی هفته‌های اخیر تجربه کردیم اشاره می‌کنیم. تو این شماره در مورد چندتا از مشکلاتمون و چند اپ جالب صحبت می کنیم."
+            },
+            "links": {
+                "CodeSchool": "https://www.codeschool.com/",
+                "boQwI'": "https://play.google.com/store/apps/details?id=org.tlhInganHol.android.klingonassistant&hl=en",
+                "Cyanogen": "http://www.cyanogenmod.org/",
+                "Lazy Swipe" : "https://play.google.com/store/apps/details?id=com.lazyswipe&hl=en",
+                "CodePad Pro": "https://play.google.com/store/apps/details?id=com.maclab.coding",
+                "CodeAnyWhere": "https://codeanywhere.com/",
+                "CodeBox": "https://www.codebox.io/",
+                "QPython": "http://qpython.com/",
+                "Programming Clojure": "https://pragprog.com/book/shcloj2/programming-clojure",
+                "LockStep": "https://github.com/tjim/lockstep",
+                "Wemux": "https://github.com/zolrath/wemux",
+                "JRuby9000": "http://jruby.org/2015/01/20/jruby-9-0-0-0-pre1.html"
+            }
+        }
+
+
+
+    }
+}
