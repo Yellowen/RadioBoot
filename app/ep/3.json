@@ -1,0 +1,153 @@
+{
+    "authors": [
+        {
+            "name": "lxsameer",
+            "avatar_link": "http://www.gravatar.com/avatar/15482f7b6361b463ea4b113d5a502400",
+            "links": {
+                "<i class='icon twitter'></i>": "http://twitter.com/lxsameer",
+                "<i class='icon github'></i>": "http://github.com/lxsameer",
+		"<i class='icon linkedin'></i>": "http://ir.linkedin.com/in/lxsameer/en",
+                "<i class='icon globe'></i>": "http://lxsameer.com/"
+            }
+        },
+        {
+            "name": "yottanami",
+            "avatar_link": "http://www.gravatar.com/avatar/2e7e32aa00fd8d2f751e31b70978279b",
+            "links": {
+                "<i class='icon twitter'></i>": "http://twitter.com/yottanami",
+                "<i class='icon github'></i>": "http://github.com/yottanami",
+		"<i class='icon linkedin'></i>": "https://ir.linkedin.com/pub/behnam-ahmad-khan-beigi/55/930/857",
+                "<i class='icon globe'></i>": "http://yottanami.com/"
+            }
+        },
+        {
+            "name": "SadMad",
+            "avatar_link": "https://pbs.twimg.com/profile_images/441341264730943488/VWi9fgc2_400x400.jpeg",
+            "links": {
+                "<i class='icon twitter'></i>": "https://twitter.com/sarmadrezayat",
+                "<i class='icon linkedin'></i>": "http://ir.linkedin.com/pub/sarmad-rezayat/87/bb5/89",
+                "<i class='icon globe'></i>": "http://www.sarmadr.com/"
+
+            }
+        },
+        {
+            "name": "SPuria",
+            "avatar_link": "http://www.gravatar.com/avatar/00000000000000000000000000000000",
+            "links": {
+                "<i class='icon twitter'></i>": "https://twitter.com/s_puria",
+            }
+        },
+        {
+            "name": "Alireza",
+            "avatar_link": "http://www.gravatar.com/avatar/00000000000000000000000000000000",
+            "links": {
+            }
+        },
+        {
+            "name": "K1Hedayati",
+            "avatar_link": "https://avatars0.githubusercontent.com/u/5066672?v=3&s=100",
+            "links": {
+                "<i class='icon twitter'></i>": "https://twitter.com/K1Hedayati",
+                "<i class='icon linkedin'></i>": "https://www.linkedin.com/profile/view?id=266524272&authType=NAME_SEARCH&authToken=P8vS&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2Cidx%3A1-2-2%2CtarId%3A1426772267337%2Ctas%3Akeyvan",
+                "<i class='icon globe'></i>": "http://www.k1h.ir/"
+            }
+        },
+
+    ],
+
+    "topics": [
+        {
+            "id": 0,
+            "time": 1,
+            "en": "",
+            "fa": "شماره ویژه ۹۴"
+        },
+        {
+            "id": 1,
+            "time": 2:04,
+            "en": "Introducing guests",
+            "fa": "معرفی مهمان‌ها"
+        },
+        {
+            "id": 2,
+            "time": 3:20,
+            "en": "Friendly chat",
+            "fa": "گپ خودمونی"
+        },
+        {
+            "id": 3,
+            "time": 3330,
+            "en": "The Pick",
+            "fa": "The Pick"
+        },
+        {
+            "id": 4,
+            "time": 46:10,
+            "en": "End part",
+            "fa": "بخش پایانی"
+        }
+
+
+    ],
+
+    "sections": {
+        "0": {
+            "desc": {
+                "en": "",
+                "fa": ""
+            },
+            "links": [
+                "",
+
+            ]
+        },
+        "1": {
+            "desc": {
+                "en": "",
+                "fa": ""
+            },
+            "links": {
+                "Iran Pycon": "http://pycon.ir",
+                "2nd National Digital System Design Contest of Iran":"http://fpgasoc.ir/",
+                "TehPug": "http://tehpug.ir/"
+            }
+        },
+        "2": {
+            "desc": {
+                "en": "",
+                "fa": ""
+            }
+        },
+        "3": {
+            "desc": {
+                "en": "We pick some stuff which we found interesting in past couple of weeks in 'The Pick' section. This episode we talked about our problem and several funny applications.",
+                "fa": "تو بخش 'The Pick' به مطالب جالبی که توی هفته‌های اخیر تجربه کردیم اشاره می‌کنیم. تو این شماره در مورد چندتا از مشکلاتمون و چند اپ جالب صحبت می کنیم."
+            },
+            "links": {
+                "Unity For Arch": "https://github.com/chenxiaolong/Unity-for-Arch",
+                "Jekyll": "jekyllrb.com",
+                "Jasper": "http://jasperproject.github.io/",
+                "RaspBerryPi": "http://www.raspberrypi.org/",
+                "FEL": "http://spins.fedoraproject.org/fel/",
+                "Prelude": "https://github.com/bbatsov/prelude",
+                "What is Anime": "http://blog.yottanami.com/anime/2014/03/23/what-is-anime.html",
+                "Babel": "https://babeljs.io",
+                "Type Script": "http://www.typescriptlang.org/",
+                "UNetbootin": "http://unetbootin.sourceforge.net/",
+                "Scaloid": "https://github.com/pocorall/scaloid",
+                "Medusa": "https://github.com/KusoIDE/Medusa",
+                "CylonJs": "http://cylonjs.com/",
+                "Artoo", "http://artoo.io/",
+                "Octave", "https://www.gnu.org/software/octave/",
+
+            }
+        },
+        "4: {
+        "desc": {
+"en": "",
+"fa": "آرزوی سال نو"
+}
+}
+
+}
+}
