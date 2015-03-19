@@ -10,6 +10,7 @@ gem 'sinatra-asset-pipeline'
 gem 'i18n'
 gem 'rest-client'
 gem 'multimap'
+gem 'slim'
 
 gem 'omniauth-twitter'
 gem 'omniauth-github'
@@ -25,4 +26,5 @@ group :development do
   gem 'rerun'
   gem 'sass'
   gem 'uglifier'
+  gem 'foreman'
 end

@@ -1,4 +1,7 @@
 en:
+  sponsorship: Sponsorship
+  subscribtion: Subscribtion
+  donation: Donation
   on_github: !!escape
     RadioBoot web application on <a href="//github.com/Yellowen/RadioBoot">Github</a>
   sponsor_desc_html: !!escape

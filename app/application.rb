@@ -181,6 +181,14 @@ class RadioApp < Sinatra::Application
 
   # Actions
 
+  get '/sponsorship/' do
+    erb :sponsorship
+  end
+
+  get '/donation/' do
+    erb :donation
+  end
+
   get '/episodes/:id/' do
     @episode = Episode.where(episode_number: params[:id]).first
     return erb :'404.html' if @episode.nil?
