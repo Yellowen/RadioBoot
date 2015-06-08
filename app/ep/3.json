@@ -19,70 +19,37 @@
 		"<i class='icon linkedin'></i>": "https://ir.linkedin.com/pub/behnam-ahmad-khan-beigi/55/930/857",
                 "<i class='icon globe'></i>": "http://yottanami.com/"
             }
-        },
-        {
-            "name": "SadMad",
-            "avatar_link": "https://pbs.twimg.com/profile_images/441341264730943488/VWi9fgc2_400x400.jpeg",
-            "links": {
-                "<i class='icon twitter'></i>": "https://twitter.com/sarmadrezayat",
-                "<i class='icon linkedin'></i>": "http://ir.linkedin.com/pub/sarmad-rezayat/87/bb5/89",
-                "<i class='icon globe'></i>": "http://www.sarmadr.com/"
-
-            }
-        },
-        {
-            "name": "SPuria",
-            "avatar_link": "http://www.gravatar.com/avatar/00000000000000000000000000000000",
-            "links": {
-                "<i class='icon twitter'></i>": "https://twitter.com/s_puria",
-            }
-        },
-        {
-            "name": "Alireza",
-            "avatar_link": "http://www.gravatar.com/avatar/00000000000000000000000000000000",
-            "links": {
-            }
-        },
-        {
-            "name": "K1Hedayati",
-            "avatar_link": "https://avatars0.githubusercontent.com/u/5066672?v=3&s=100",
-            "links": {
-                "<i class='icon twitter'></i>": "https://twitter.com/K1Hedayati",
-                "<i class='icon linkedin'></i>": "https://www.linkedin.com/profile/view?id=266524272&authType=NAME_SEARCH&authToken=P8vS&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2Cidx%3A1-2-2%2CtarId%3A1426772267337%2Ctas%3Akeyvan",
-                "<i class='icon globe'></i>": "http://www.k1h.ir/"
-            }
-        },
-
+        }
     ],
 
     "topics": [
         {
             "id": 0,
             "time": 1,
-            "en": "",
-            "fa": "شماره ویژه ۹۴"
+            "en": "Hello Boot",
+            "fa": "سلام بوت"
         },
         {
             "id": 1,
-            "time": 2:04,
+            "time": 120,
             "en": "Introducing guests",
             "fa": "معرفی مهمان‌ها"
         },
         {
             "id": 2,
-            "time": 3:20,
+            "time": 200,
             "en": "Friendly chat",
             "fa": "گپ خودمونی"
         },
         {
             "id": 3,
-            "time": 3330,
+            "time": 1430,
             "en": "The Pick",
             "fa": "The Pick"
         },
         {
             "id": 4,
-            "time": 46:10,
+            "time": 2840,
             "en": "End part",
             "fa": "بخش پایانی"
         }
@@ -93,18 +60,18 @@
     "sections": {
         "0": {
             "desc": {
-                "en": "",
-                "fa": ""
+                "en": "This episode of Radioboot is totally different from other regular episodes and  dedicated to new year's eve (1394) . In this number we have a fun and friendly chat with out guest and there is not technical discussion",
+                "fa": "این شماره رادیو بوت با سایر قسمت ها متفاوت است و اختصاص دارد به عید سال نو - ۱۳۹۴. در این شماره در فضایی صمیمی به گفتو گو می پردازیم و خبری از بحث تکنیکی نیست."
             },
             "links": [
-                "",
+                ""
 
             ]
         },
         "1": {
             "desc": {
-                "en": "",
-                "fa": ""
+                "en": "A group of our friends from KarajLug are here today and we want to discuss the past year with them, and ask them about their new year's goals.",
+                "fa": "تعدادی از دوستان ما در کرج لاگ امروز در کنار ما هستند و می خواهیم در مورد سالی که گذشت و اهداف سال جدید صحبت کنیم."
             },
             "links": {
                 "Iran Pycon": "http://pycon.ir",
@@ -114,8 +81,8 @@
         },
         "2": {
             "desc": {
-                "en": "",
-                "fa": ""
+                "en": "A group of our friends from KarajLug are here today and we want to discuss the past year with them, and ask them about their new year's goals.",
+                "fa": "تعدادی از دوستان ما در کرج لاگ امروز در کنار ما هستند و می خواهیم در مورد سالی که گذشت و اهداف سال جدید صحبت کنیم."
             }
         },
         "3": {
@@ -137,17 +104,17 @@
                 "Scaloid": "https://github.com/pocorall/scaloid",
                 "Medusa": "https://github.com/KusoIDE/Medusa",
                 "CylonJs": "http://cylonjs.com/",
-                "Artoo", "http://artoo.io/",
-                "Octave", "https://www.gnu.org/software/octave/",
+                "Artoo": "http://artoo.io/",
+                "Octave": "https://www.gnu.org/software/octave/"
 
             }
         },
-        "4: {
-        "desc": {
-"en": "",
-"fa": "آرزوی سال نو"
-}
-}
+        "4": {
+            "desc": {
+		"en": "Happy new year",
+		"fa": "آرزوی سال نو"
+	    }
+	}
 
-}
+    }
 }
