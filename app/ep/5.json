@@ -1,0 +1,46 @@
+{
+    "authors": [
+        {
+            "name": "lxsameer",
+            "avatar_link": "http://www.gravatar.com/avatar/15482f7b6361b463ea4b113d5a502400",
+            "links": {
+                "<i class='icon twitter'></i>": "http://twitter.com/lxsameer",
+                "<i class='icon github'></i>": "http://github.com/lxsameer",
+		"<i class='icon linkedin'></i>": "http://ir.linkedin.com/in/lxsameer/en",
+                "<i class='icon globe'></i>": "http://lxsameer.com/"
+            }
+        },
+        {
+            "name": "yottanami",
+            "avatar_link": "http://www.gravatar.com/avatar/2e7e32aa00fd8d2f751e31b70978279b",
+            "links": {
+                "<i class='icon twitter'></i>": "http://twitter.com/yottanami",
+                "<i class='icon github'></i>": "http://github.com/yottanami",
+		"<i class='icon linkedin'></i>": "https://ir.linkedin.com/pub/behnam-ahmad-khan-beigi/55/930/857",
+                "<i class='icon globe'></i>": "http://yottanami.com/"
+            }
+        }
+    ],
+
+    "topics": [
+        {
+            "id": 0,
+            "time": 1,
+            "en": "Windows 10",
+            "fa": "ویندوز ۱۰"
+        }
+    ],
+
+    "sections": {
+        "0": {
+            "desc": {
+                "en": "Radio Boot and HelloWorld mag join forces for the second episode of 'Hello Boot' podcast.",
+                "fa": "رادیو یوت با همکاری مجله سلام دنیا دومین شماره پادکست سلام بوت را منتشر کرد."
+            },
+            "links": [
+                ""
+
+            ]
+        }
+    }
+}
