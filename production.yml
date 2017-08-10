@@ -1,0 +1,21 @@
+version: '2.1'
+services:
+  web:
+    image: lxsameer/radioboot:latest
+    links:
+      - mysql
+    environment:
+      WORDPRESS_DB_PASSWORD: radioboot
+    working_dir: /var/www/html
+    ports:
+      - "80:80"
+  mysql:
+    image: mysql:5.7
+    volumes_from:
+      - data
+    environment:
+      MYSQL_ROOT_PASSWORD: radioboot
+  data:
+    image: armbuild/busybox
+    volumes:
+      - /var/lib/mysql
