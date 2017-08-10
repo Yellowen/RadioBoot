@@ -14,6 +14,7 @@ COPY ./wordpress /usr/src/wordpress
 RUN chown -R www-data:www-data /usr/src/wordpress
 
 COPY docker-entrypoint.sh /entrypoint.sh
+COPY config/apache/config /etc/apache2/sites-enabled/000-default.conf
 
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/entrypoint.sh"]
