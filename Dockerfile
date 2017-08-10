@@ -10,7 +10,7 @@ RUN docker-php-ext-install mysqli
 
 VOLUME /var/www/html
 
-COPY ./wordpress /usr/src/
+COPY ./wordpress /usr/src/wordpress
 RUN chown -R www-data:www-data /usr/src/wordpress
 
 COPY docker-entrypoint.sh /entrypoint.sh
