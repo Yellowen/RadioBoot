@@ -1,3 +1,0 @@
-pushd ${OPENSHIFT_REPO_DIR}
-RACK_ENV=production bundle exec rake assets:precompile --trace
-popd
