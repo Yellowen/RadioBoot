@@ -16,6 +16,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: radioboot
   data:
-    image: armbuild/busybox
+    image: busybox
     volumes:
       - /var/lib/mysql
