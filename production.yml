@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: lxsameer/radioboot:latest
+    image: lxsameer/radioboot:0.1.2
     links:
       - mysql
     environment:
