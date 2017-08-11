@@ -1,12 +1,17 @@
 version: '2'
 services:
   web:
-    image: lxsameer/radioboot:0.1.2
+    image: lxsameer/radioboot:v0.1.2
     links:
       - mysql
     environment:
       WORDPRESS_DB_PASSWORD: radioboot
+      WORDPRESS_DB_HOST: mysql
     working_dir: /var/www/html
+    volumes_from:
+      - data
+    depends_on:
+      - mysql
     ports:
       - "80:80"
   mysql:
